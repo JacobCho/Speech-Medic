@@ -9,11 +9,11 @@
 /* Begin PBXBuildFile section */
 		527D9F251A9FA9F500435FB9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 527D9F241A9FA9F500435FB9 /* AppDelegate.swift */; };
 		527D9F281A9FA9F500435FB9 /* Speech_Medic.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 527D9F261A9FA9F500435FB9 /* Speech_Medic.xcdatamodeld */; };
-		527D9F2A1A9FA9F500435FB9 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 527D9F291A9FA9F500435FB9 /* ViewController.swift */; };
 		527D9F2D1A9FA9F500435FB9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 527D9F2B1A9FA9F500435FB9 /* Main.storyboard */; };
 		527D9F2F1A9FA9F500435FB9 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 527D9F2E1A9FA9F500435FB9 /* Images.xcassets */; };
 		527D9F321A9FA9F500435FB9 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 527D9F301A9FA9F500435FB9 /* LaunchScreen.xib */; };
 		527D9F3E1A9FA9F500435FB9 /* Speech_MedicTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 527D9F3D1A9FA9F500435FB9 /* Speech_MedicTests.swift */; };
+		527D9F481A9FAA6F00435FB9 /* PatientsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 527D9F471A9FAA6F00435FB9 /* PatientsViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -31,13 +31,13 @@
 		527D9F231A9FA9F500435FB9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		527D9F241A9FA9F500435FB9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		527D9F271A9FA9F500435FB9 /* Speech_Medic.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Speech_Medic.xcdatamodel; sourceTree = "<group>"; };
-		527D9F291A9FA9F500435FB9 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		527D9F2C1A9FA9F500435FB9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		527D9F2E1A9FA9F500435FB9 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		527D9F311A9FA9F500435FB9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		527D9F371A9FA9F500435FB9 /* Speech MedicTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Speech MedicTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		527D9F3C1A9FA9F500435FB9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		527D9F3D1A9FA9F500435FB9 /* Speech_MedicTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Speech_MedicTests.swift; sourceTree = "<group>"; };
+		527D9F471A9FAA6F00435FB9 /* PatientsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PatientsViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -80,7 +80,7 @@
 			isa = PBXGroup;
 			children = (
 				527D9F241A9FA9F500435FB9 /* AppDelegate.swift */,
-				527D9F291A9FA9F500435FB9 /* ViewController.swift */,
+				527D9F471A9FAA6F00435FB9 /* PatientsViewController.swift */,
 				527D9F2B1A9FA9F500435FB9 /* Main.storyboard */,
 				527D9F2E1A9FA9F500435FB9 /* Images.xcassets */,
 				527D9F301A9FA9F500435FB9 /* LaunchScreen.xib */,
@@ -215,7 +215,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				527D9F2A1A9FA9F500435FB9 /* ViewController.swift in Sources */,
+				527D9F481A9FAA6F00435FB9 /* PatientsViewController.swift in Sources */,
 				527D9F281A9FA9F500435FB9 /* Speech_Medic.xcdatamodeld in Sources */,
 				527D9F251A9FA9F500435FB9 /* AppDelegate.swift in Sources */,
 			);
