@@ -9,12 +9,41 @@
 import UIKit
 import CoreData
 
-class PatientsViewController: UIViewController, UITableViewDataSource {
+class PatientsViewController: UIViewController, UITableViewDataSource, NSFetchedResultsControllerDelegate {
     
     @IBOutlet weak var tableView: UITableView!
     
-    var managedObjectContext = (UIApplication.sharedApplication().delegate as AppDelegate).managedObjectContext
-    var patients = [Patient]()
+    let managedObjectContext = (UIApplication.sharedApplication().delegate as AppDelegate).managedObjectContext
+    
+    lazy var fetchedResultsController: NSFetchedResultsController = {
+        let fetchRequest = NSFetchRequest()
+        // Edit the entity name as appropriate.
+        let entity = NSEntityDescription.entityForName("Patient", inManagedObjectContext: self.managedObjectContext!)
+        fetchRequest.entity = entity
+        
+        // Set the batch size to a suitable number.
+        fetchRequest.fetchBatchSize = 20
+        
+        // Edit the sort key as appropriate.
+        let sortDescriptor = NSSortDescriptor(key: "name", ascending: true)
+        let sortDescriptors = [sortDescriptor]
+        
+        fetchRequest.sortDescriptors = [sortDescriptor]
+        
+        // Edit the section name key path and cache name if appropriate.
+        // nil for section name key path means "no sections".
+        let aFetchedResultsController = NSFetchedResultsController(fetchRequest: fetchRequest, managedObjectContext: self.managedObjectContext!, sectionNameKeyPath: nil, cacheName: "Master")
+        aFetchedResultsController.delegate = self
+        
+        var error: NSError? = nil
+        if !aFetchedResultsController.performFetch(&error) {
+
+            println("Unresolved error \(error)")
+            abort()
+        }
+        
+        return aFetchedResultsController
+        }()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -22,8 +51,6 @@ class PatientsViewController: UIViewController, UITableViewDataSource {
     
     override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(animated)
-        
-        self.fetchPatients()
         
     }
     
@@ -58,7 +85,8 @@ class PatientsViewController: UIViewController, UITableViewDataSource {
     
     // MARK: UITableViewDataSource
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-            return patients.count
+        let patients = self.fetchedResultsController.sections![section] as NSFetchedResultsSectionInfo
+        return patients.numberOfObjects
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
@@ -66,8 +94,8 @@ class PatientsViewController: UIViewController, UITableViewDataSource {
             let cell = tableView.dequeueReusableCellWithIdentifier("PatientCell")
                 as UITableViewCell
             
-            let patient = patients[indexPath.row]
-            cell.textLabel!.text = patient.name
+            self.configureCell(cell, atIndexPath: indexPath)
+        
             return cell
     }
     
@@ -75,17 +103,16 @@ class PatientsViewController: UIViewController, UITableViewDataSource {
         if editingStyle == UITableViewCellEditingStyle.Delete {
             
             // Save in managedObjectContext
-            let patient = self.patients[indexPath.row]
+            let patient = self.fetchedResultsController.objectAtIndexPath(indexPath) as Patient
             self.managedObjectContext?.deleteObject(patient)
             var error : NSError?
             self.managedObjectContext?.save(&error)
-            
-            // Remove from array
-            patients.removeAtIndex(indexPath.row)
-            
-            // Animate
-            self.tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: UITableViewRowAnimation.Left)
         }
+    }
+    
+    func configureCell(cell: UITableViewCell, atIndexPath indexPath: NSIndexPath) {
+        let patient = self.fetchedResultsController.objectAtIndexPath(indexPath) as Patient
+        cell.textLabel!.text = patient.name
     }
     
     // MARK: Core Data Methods
@@ -101,28 +128,44 @@ class PatientsViewController: UIViewController, UITableViewDataSource {
             println("Could not save \(error), \(error?.userInfo)")
         }
 
-        patients.append(patient)
     }
     
-    func fetchPatients() {
-        
-        let managedContext = self.managedObjectContext!
-        
-        let fetchRequest = NSFetchRequest(entityName:"Patient")
-        
-        var error: NSError?
-        
-        let fetchedResults =
-        managedContext.executeFetchRequest(fetchRequest,
-            error: &error) as [Patient]?
-        
-        if let results = fetchedResults {
-            patients = results
-            self.tableView.reloadData()
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if segue.identifier == "PatientCell" {
+            let cell = sender as UITableViewCell
+            let indexPath = self.tableView.indexPathForCell(cell)
             
-        } else {
-            println("Could not fetch \(error), \(error!.userInfo)")
+            let diagnoseVC = segue.destinationViewController as DiagnoseViewController
+            
         }
+    }
+    
+    // MARK: NSFetchedResultsController Delegate Methods
+    
+    func controllerWillChangeContent(controller: NSFetchedResultsController) {
+        self.tableView.beginUpdates()
+    }
+    
+    func controller(controller: NSFetchedResultsController, didChangeObject object: AnyObject, atIndexPath indexPath: NSIndexPath, forChangeType type: NSFetchedResultsChangeType, newIndexPath: NSIndexPath) {
+            switch type {
+            case .Insert:
+                self.tableView.insertRowsAtIndexPaths([newIndexPath], withRowAnimation: .Fade)
+            case .Update:
+                let cell = self.tableView.cellForRowAtIndexPath(indexPath)
+                self.configureCell(cell!, atIndexPath: indexPath)
+                self.tableView.reloadRowsAtIndexPaths([indexPath], withRowAnimation: .Fade)
+            case .Move:
+                self.tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Fade)
+                self.tableView.insertRowsAtIndexPaths([newIndexPath], withRowAnimation: .Fade)
+            case .Delete:
+                self.tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Fade)
+            default:
+                return
+            }
+    }
+    
+    func controllerDidChangeContent(controller: NSFetchedResultsController) {
+        self.tableView.endUpdates()
     }
     
 

@@ -16,6 +16,7 @@
 		527D9F481A9FAA6F00435FB9 /* PatientsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 527D9F471A9FAA6F00435FB9 /* PatientsViewController.swift */; };
 		52D909AC1AA006BA00E0F82D /* Patient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52D909AB1AA006BA00E0F82D /* Patient.swift */; };
 		52D909AE1AA006BB00E0F82D /* Symptoms.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52D909AD1AA006BB00E0F82D /* Symptoms.swift */; };
+		52D909B11AA03E5D00E0F82D /* DiagnoseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52D909B01AA03E5D00E0F82D /* DiagnoseViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -43,6 +44,7 @@
 		52D909A41AA0067100E0F82D /* Speech Medic-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Speech Medic-Bridging-Header.h"; sourceTree = "<group>"; };
 		52D909AB1AA006BA00E0F82D /* Patient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Patient.swift; sourceTree = "<group>"; };
 		52D909AD1AA006BB00E0F82D /* Symptoms.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Symptoms.swift; sourceTree = "<group>"; };
+		52D909B01AA03E5D00E0F82D /* DiagnoseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DiagnoseViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -84,9 +86,8 @@
 		527D9F211A9FA9F500435FB9 /* Speech Medic */ = {
 			isa = PBXGroup;
 			children = (
+				52D909B21AA03E6A00E0F82D /* Controllers */,
 				52D909AF1AA006C800E0F82D /* Models */,
-				527D9F241A9FA9F500435FB9 /* AppDelegate.swift */,
-				527D9F471A9FAA6F00435FB9 /* PatientsViewController.swift */,
 				527D9F2B1A9FA9F500435FB9 /* Main.storyboard */,
 				527D9F2E1A9FA9F500435FB9 /* Images.xcassets */,
 				527D9F301A9FA9F500435FB9 /* LaunchScreen.xib */,
@@ -100,6 +101,7 @@
 		527D9F221A9FA9F500435FB9 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				527D9F241A9FA9F500435FB9 /* AppDelegate.swift */,
 				527D9F231A9FA9F500435FB9 /* Info.plist */,
 			);
 			name = "Supporting Files";
@@ -130,6 +132,15 @@
 			);
 			name = Models;
 			path = ..;
+			sourceTree = "<group>";
+		};
+		52D909B21AA03E6A00E0F82D /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				527D9F471A9FAA6F00435FB9 /* PatientsViewController.swift */,
+				52D909B01AA03E5D00E0F82D /* DiagnoseViewController.swift */,
+			);
+			name = Controllers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -234,6 +245,7 @@
 			files = (
 				52D909AE1AA006BB00E0F82D /* Symptoms.swift in Sources */,
 				527D9F481A9FAA6F00435FB9 /* PatientsViewController.swift in Sources */,
+				52D909B11AA03E5D00E0F82D /* DiagnoseViewController.swift in Sources */,
 				52D909AC1AA006BA00E0F82D /* Patient.swift in Sources */,
 				527D9F281A9FA9F500435FB9 /* Speech_Medic.xcdatamodeld in Sources */,
 				527D9F251A9FA9F500435FB9 /* AppDelegate.swift in Sources */,
