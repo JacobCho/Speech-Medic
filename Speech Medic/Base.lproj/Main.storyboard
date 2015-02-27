@@ -27,10 +27,14 @@
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="INd-DZ-Nxr" id="xEN-zN-NZU">
                                             <autoresizingMask key="autoresizingMask"/>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <segue destination="Owj-TE-SRg" kind="show" identifier="symptomsSegue" id="uUJ-f5-tMk"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                                 <connections>
                                     <outlet property="dataSource" destination="vXZ-lx-hvc" id="s0n-SF-ngX"/>
+                                    <outlet property="delegate" destination="vXZ-lx-hvc" id="0Qh-rt-Bsc"/>
                                 </connections>
                             </tableView>
                         </subviews>
@@ -73,7 +77,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="VMK-Ob-fOT" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1879" y="337"/>
+            <point key="canvasLocation" x="2059" y="337"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="fJj-rY-43k">

@@ -13,7 +13,8 @@ class PatientsViewController: UIViewController, UITableViewDataSource {
     
     @IBOutlet weak var tableView: UITableView!
     
-    var patients = [NSManagedObject]()
+    var managedObjectContext = (UIApplication.sharedApplication().delegate as AppDelegate).managedObjectContext
+    var patients = [Patient]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -56,37 +57,44 @@ class PatientsViewController: UIViewController, UITableViewDataSource {
     }
     
     // MARK: UITableViewDataSource
-    func tableView(tableView: UITableView,
-        numberOfRowsInSection section: Int) -> Int {
+    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
             return patients.count
     }
     
-    func tableView(tableView: UITableView,
-        cellForRowAtIndexPath
-        indexPath: NSIndexPath) -> UITableViewCell {
+    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
             
             let cell = tableView.dequeueReusableCellWithIdentifier("PatientCell")
                 as UITableViewCell
             
             let patient = patients[indexPath.row]
-            cell.textLabel!.text = patient.valueForKey("name") as String?
+            cell.textLabel!.text = patient.name
             return cell
     }
     
+    func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
+        if editingStyle == UITableViewCellEditingStyle.Delete {
+            
+            // Save in managedObjectContext
+            let patient = self.patients[indexPath.row]
+            self.managedObjectContext?.deleteObject(patient)
+            var error : NSError?
+            self.managedObjectContext?.save(&error)
+            
+            // Remove from array
+            patients.removeAtIndex(indexPath.row)
+            
+            // Animate
+            self.tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: UITableViewRowAnimation.Left)
+        }
+    }
+    
+    // MARK: Core Data Methods
+    
     func saveName(name: String) {
 
-        let appDelegate = UIApplication.sharedApplication().delegate as AppDelegate
+        let managedContext = self.managedObjectContext!
         
-        let managedContext = appDelegate.managedObjectContext!
-        
-        let entity =  NSEntityDescription.entityForName("Patient",
-            inManagedObjectContext:
-            managedContext)
-        
-        let patient = NSManagedObject(entity: entity!,
-            insertIntoManagedObjectContext:managedContext)
-        
-        patient.setValue(name, forKey: "name")
+        let patient = Patient.newPatient(managedContext, name: name)
         
         var error: NSError?
         if !managedContext.save(&error) {
@@ -97,10 +105,8 @@ class PatientsViewController: UIViewController, UITableViewDataSource {
     }
     
     func fetchPatients() {
-        let appDelegate =
-        UIApplication.sharedApplication().delegate as AppDelegate
         
-        let managedContext = appDelegate.managedObjectContext!
+        let managedContext = self.managedObjectContext!
         
         let fetchRequest = NSFetchRequest(entityName:"Patient")
         
@@ -108,7 +114,7 @@ class PatientsViewController: UIViewController, UITableViewDataSource {
         
         let fetchedResults =
         managedContext.executeFetchRequest(fetchRequest,
-            error: &error) as [NSManagedObject]?
+            error: &error) as [Patient]?
         
         if let results = fetchedResults {
             patients = results

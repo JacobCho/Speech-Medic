@@ -14,6 +14,8 @@
 		527D9F321A9FA9F500435FB9 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 527D9F301A9FA9F500435FB9 /* LaunchScreen.xib */; };
 		527D9F3E1A9FA9F500435FB9 /* Speech_MedicTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 527D9F3D1A9FA9F500435FB9 /* Speech_MedicTests.swift */; };
 		527D9F481A9FAA6F00435FB9 /* PatientsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 527D9F471A9FAA6F00435FB9 /* PatientsViewController.swift */; };
+		52D909AC1AA006BA00E0F82D /* Patient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52D909AB1AA006BA00E0F82D /* Patient.swift */; };
+		52D909AE1AA006BB00E0F82D /* Symptoms.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52D909AD1AA006BB00E0F82D /* Symptoms.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -38,6 +40,9 @@
 		527D9F3C1A9FA9F500435FB9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		527D9F3D1A9FA9F500435FB9 /* Speech_MedicTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Speech_MedicTests.swift; sourceTree = "<group>"; };
 		527D9F471A9FAA6F00435FB9 /* PatientsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PatientsViewController.swift; sourceTree = "<group>"; };
+		52D909A41AA0067100E0F82D /* Speech Medic-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Speech Medic-Bridging-Header.h"; sourceTree = "<group>"; };
+		52D909AB1AA006BA00E0F82D /* Patient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Patient.swift; sourceTree = "<group>"; };
+		52D909AD1AA006BB00E0F82D /* Symptoms.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Symptoms.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -79,6 +84,7 @@
 		527D9F211A9FA9F500435FB9 /* Speech Medic */ = {
 			isa = PBXGroup;
 			children = (
+				52D909AF1AA006C800E0F82D /* Models */,
 				527D9F241A9FA9F500435FB9 /* AppDelegate.swift */,
 				527D9F471A9FAA6F00435FB9 /* PatientsViewController.swift */,
 				527D9F2B1A9FA9F500435FB9 /* Main.storyboard */,
@@ -86,6 +92,7 @@
 				527D9F301A9FA9F500435FB9 /* LaunchScreen.xib */,
 				527D9F261A9FA9F500435FB9 /* Speech_Medic.xcdatamodeld */,
 				527D9F221A9FA9F500435FB9 /* Supporting Files */,
+				52D909A41AA0067100E0F82D /* Speech Medic-Bridging-Header.h */,
 			);
 			path = "Speech Medic";
 			sourceTree = "<group>";
@@ -113,6 +120,16 @@
 				527D9F3C1A9FA9F500435FB9 /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		52D909AF1AA006C800E0F82D /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				52D909AD1AA006BB00E0F82D /* Symptoms.swift */,
+				52D909AB1AA006BA00E0F82D /* Patient.swift */,
+			);
+			name = Models;
+			path = ..;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -215,7 +232,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				52D909AE1AA006BB00E0F82D /* Symptoms.swift in Sources */,
 				527D9F481A9FAA6F00435FB9 /* PatientsViewController.swift in Sources */,
+				52D909AC1AA006BA00E0F82D /* Patient.swift in Sources */,
 				527D9F281A9FA9F500435FB9 /* Speech_Medic.xcdatamodeld in Sources */,
 				527D9F251A9FA9F500435FB9 /* AppDelegate.swift in Sources */,
 			);
@@ -340,9 +359,12 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				INFOPLIST_FILE = "Speech Medic/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Speech Medic/Speech Medic-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
 		};
@@ -350,9 +372,11 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				INFOPLIST_FILE = "Speech Medic/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Speech Medic/Speech Medic-Bridging-Header.h";
 			};
 			name = Release;
 		};
@@ -409,6 +433,7 @@
 				527D9F431A9FA9F500435FB9 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		527D9F441A9FA9F500435FB9 /* Build configuration list for PBXNativeTarget "Speech MedicTests" */ = {
 			isa = XCConfigurationList;
@@ -417,6 +442,7 @@
 				527D9F461A9FA9F500435FB9 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 

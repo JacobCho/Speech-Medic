@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="6254" systemVersion="14C109" minimumToolsVersion="Automatic" macOSVersion="Automatic" iOSVersion="Automatic">
-    <entity name="Patient" syncable="YES">
+    <entity name="Patient" representedClassName="Speech_Medic.Patient" syncable="YES">
         <attribute name="diagnosis" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
         <relationship name="symptoms" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Symptoms" syncable="YES"/>
     </entity>
-    <entity name="Symptoms" syncable="YES">
+    <entity name="Symptoms" representedClassName="Speech_Medic.Symptoms" syncable="YES">
         <attribute name="articulatoryGroping" optional="YES" attributeType="Boolean" syncable="YES"/>
         <attribute name="breathiness" optional="YES" attributeType="Boolean" syncable="YES"/>
         <attribute name="facialTicks" optional="YES" attributeType="Boolean" syncable="YES"/>

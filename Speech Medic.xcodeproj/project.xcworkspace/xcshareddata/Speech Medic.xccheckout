@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>7F2657BF-2A3C-4F84-BE13-67ECF0A93B82</string>
+	<key>IDESourceControlProjectName</key>
+	<string>Speech Medic</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>7693899F08B5E36D4152BA76CC43E7AED14DEABC</key>
+		<string>https://github.com/JacobCho/Speech-Medic.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>Speech Medic.xcodeproj</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>7693899F08B5E36D4152BA76CC43E7AED14DEABC</key>
+		<string>../..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>https://github.com/JacobCho/Speech-Medic.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>111</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>7693899F08B5E36D4152BA76CC43E7AED14DEABC</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>7693899F08B5E36D4152BA76CC43E7AED14DEABC</string>
+			<key>IDESourceControlWCCName</key>
+			<string>Speech%20Medic</string>
+		</dict>
+	</array>
+</dict>
+</plist>
