@@ -2,6 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6254" systemVersion="14C109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="ymV-lh-7GH">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--Patients-->
@@ -16,7 +17,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="52" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="Us4-Ym-9Bz">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="52" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="Us4-Ym-9Bz">
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
@@ -34,6 +35,12 @@
                             </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="Us4-Ym-9Bz" firstAttribute="top" secondItem="jyV-Pf-zRb" secondAttribute="bottom" constant="-64" id="Ai8-yl-oI7"/>
+                            <constraint firstItem="2fi-mo-0CV" firstAttribute="top" secondItem="Us4-Ym-9Bz" secondAttribute="bottom" id="IOj-A6-sHe"/>
+                            <constraint firstItem="Us4-Ym-9Bz" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" constant="-16" id="o7h-qy-ouS"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="Us4-Ym-9Bz" secondAttribute="trailing" constant="-16" id="x2e-ZF-khR"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Patients" id="UtQ-tx-Q8n">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="5gr-B4-waB">
@@ -49,6 +56,24 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1192" y="337"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="PrC-8s-tOI">
+            <objects>
+                <viewController id="Owj-TE-SRg" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="JyH-LV-7ik"/>
+                        <viewControllerLayoutGuide type="bottom" id="vZC-Aa-663"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="SSC-gs-l19">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="VMK-Ob-fOT" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1879" y="337"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="fJj-rY-43k">

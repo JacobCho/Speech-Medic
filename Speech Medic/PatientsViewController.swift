@@ -112,6 +112,8 @@ class PatientsViewController: UIViewController, UITableViewDataSource {
         
         if let results = fetchedResults {
             patients = results
+            self.tableView.reloadData()
+            
         } else {
             println("Could not fetch \(error), \(error!.userInfo)")
         }
