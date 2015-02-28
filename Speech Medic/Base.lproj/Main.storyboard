@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6254" systemVersion="14C109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="ymV-lh-7GH">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6254" systemVersion="14C109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="Lze-r7-ddK">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
@@ -27,9 +27,6 @@
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="INd-DZ-Nxr" id="xEN-zN-NZU">
                                             <autoresizingMask key="autoresizingMask"/>
                                         </tableViewCellContentView>
-                                        <connections>
-                                            <segue destination="Owj-TE-SRg" kind="show" identifier="symptomsSegue" id="uUJ-f5-tMk"/>
-                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                                 <connections>
@@ -72,12 +69,70 @@
                     <view key="view" contentMode="scaleToFill" id="SSC-gs-l19">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="68" sectionHeaderHeight="40" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="kxo-7c-dSM">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="SymptomCell" rowHeight="68" id="FfS-TZ-8WB" customClass="SymptomTableViewCell" customModule="Speech_Medic" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="600" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="FfS-TZ-8WB" id="ePG-bG-CEV">
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="1M6-fO-Gk8">
+                                                    <rect key="frame" x="532" y="20" width="51" height="31"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="31" id="PYk-7g-PWp"/>
+                                                        <constraint firstAttribute="width" constant="49" id="yoj-RP-ZAy"/>
+                                                    </constraints>
+                                                </switch>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dU0-y8-Ol0">
+                                                    <rect key="frame" x="18" y="8" width="506" height="51"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="51" id="a7j-pL-cLK"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                                    <color key="textColor" red="0.45882352939999999" green="0.45882352939999999" blue="0.45882352939999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="centerY" secondItem="dU0-y8-Ol0" secondAttribute="centerY" id="ICy-iS-OJN"/>
+                                                <constraint firstItem="dU0-y8-Ol0" firstAttribute="leading" secondItem="ePG-bG-CEV" secondAttribute="leadingMargin" constant="10" id="N9j-ZD-2fx"/>
+                                                <constraint firstItem="1M6-fO-Gk8" firstAttribute="leading" secondItem="dU0-y8-Ol0" secondAttribute="trailing" constant="8" id="OYX-lL-f0M"/>
+                                                <constraint firstAttribute="centerY" secondItem="1M6-fO-Gk8" secondAttribute="centerY" id="PzV-M6-Y9j"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="1M6-fO-Gk8" secondAttribute="trailing" constant="11" id="aQX-MK-DJd"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="symptomLabel" destination="dU0-y8-Ol0" id="NUx-87-KoH"/>
+                                            <outlet property="symptomSwitch" destination="1M6-fO-Gk8" id="JkC-WT-nnV"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="Owj-TE-SRg" id="gig-Op-oGl"/>
+                                    <outlet property="delegate" destination="Owj-TE-SRg" id="t6Y-Yk-1VT"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="kxo-7c-dSM" firstAttribute="leading" secondItem="SSC-gs-l19" secondAttribute="leadingMargin" constant="-16" id="6xR-rk-FbB"/>
+                            <constraint firstItem="vZC-Aa-663" firstAttribute="top" secondItem="kxo-7c-dSM" secondAttribute="bottom" id="SGO-8z-chD"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="kxo-7c-dSM" secondAttribute="trailing" constant="-16" id="Udo-TQ-JeP"/>
+                            <constraint firstItem="kxo-7c-dSM" firstAttribute="top" secondItem="JyH-LV-7ik" secondAttribute="bottom" constant="-64" id="WqL-Cg-ckE"/>
+                        </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="0m1-9u-D3S"/>
+                    <connections>
+                        <outlet property="tableView" destination="kxo-7c-dSM" id="3dU-V5-rUn"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="VMK-Ob-fOT" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2059" y="337"/>
+            <point key="canvasLocation" x="2871" y="328"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="fJj-rY-43k">
@@ -96,6 +151,24 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="NIG-IT-jZk" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="473" y="337"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="dlC-3S-Bd9">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Lze-r7-ddK" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="Cco-pc-0r0">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="Owj-TE-SRg" kind="relationship" relationship="rootViewController" id="ug0-Gl-4xc"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="8WU-kG-TxO" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2059" y="337"/>
         </scene>
     </scenes>
 </document>

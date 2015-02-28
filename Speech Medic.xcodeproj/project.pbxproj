@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		524FC4951AA12AA9004B86D3 /* SymptomTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 524FC4941AA12AA9004B86D3 /* SymptomTableViewCell.swift */; };
+		524FC4971AA13346004B86D3 /* Symptom.swift in Sources */ = {isa = PBXBuildFile; fileRef = 524FC4961AA13346004B86D3 /* Symptom.swift */; };
 		527D9F251A9FA9F500435FB9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 527D9F241A9FA9F500435FB9 /* AppDelegate.swift */; };
 		527D9F281A9FA9F500435FB9 /* Speech_Medic.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 527D9F261A9FA9F500435FB9 /* Speech_Medic.xcdatamodeld */; };
 		527D9F2D1A9FA9F500435FB9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 527D9F2B1A9FA9F500435FB9 /* Main.storyboard */; };
@@ -30,6 +32,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		524FC4941AA12AA9004B86D3 /* SymptomTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SymptomTableViewCell.swift; sourceTree = "<group>"; };
+		524FC4961AA13346004B86D3 /* Symptom.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Symptom.swift; sourceTree = "<group>"; };
 		527D9F1F1A9FA9F500435FB9 /* Speech Medic.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Speech Medic.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		527D9F231A9FA9F500435FB9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		527D9F241A9FA9F500435FB9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -65,6 +69,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		524FC4931AA12A8E004B86D3 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				524FC4941AA12AA9004B86D3 /* SymptomTableViewCell.swift */,
+			);
+			name = Views;
+			sourceTree = "<group>";
+		};
 		527D9F161A9FA9F500435FB9 = {
 			isa = PBXGroup;
 			children = (
@@ -86,6 +98,7 @@
 		527D9F211A9FA9F500435FB9 /* Speech Medic */ = {
 			isa = PBXGroup;
 			children = (
+				524FC4931AA12A8E004B86D3 /* Views */,
 				52D909B21AA03E6A00E0F82D /* Controllers */,
 				52D909AF1AA006C800E0F82D /* Models */,
 				527D9F2B1A9FA9F500435FB9 /* Main.storyboard */,
@@ -129,6 +142,7 @@
 			children = (
 				52D909AD1AA006BB00E0F82D /* Symptoms.swift */,
 				52D909AB1AA006BA00E0F82D /* Patient.swift */,
+				524FC4961AA13346004B86D3 /* Symptom.swift */,
 			);
 			name = Models;
 			path = ..;
@@ -244,10 +258,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				52D909AE1AA006BB00E0F82D /* Symptoms.swift in Sources */,
+				524FC4971AA13346004B86D3 /* Symptom.swift in Sources */,
 				527D9F481A9FAA6F00435FB9 /* PatientsViewController.swift in Sources */,
 				52D909B11AA03E5D00E0F82D /* DiagnoseViewController.swift in Sources */,
 				52D909AC1AA006BA00E0F82D /* Patient.swift in Sources */,
 				527D9F281A9FA9F500435FB9 /* Speech_Medic.xcdatamodeld in Sources */,
+				524FC4951AA12AA9004B86D3 /* SymptomTableViewCell.swift in Sources */,
 				527D9F251A9FA9F500435FB9 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
