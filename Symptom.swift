@@ -6,16 +6,16 @@
 //  Copyright (c) 2015 Jacob. All rights reserved.
 //
 
-import UIKit
+import Foundation
 
 class Symptom: NSObject {
     
     var name : String
-    var isSymptom : Bool
+    var isSymptom : Bool = false
     
     init(name: String) {
         self.name = name
-        self.isSymptom = false
+
     }
     
     class func setupOralExamArray() -> [Symptom] {

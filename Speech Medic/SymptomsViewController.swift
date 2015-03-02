@@ -8,17 +8,17 @@
 
 import UIKit
 
-class DiagnoseViewController: UIViewController, UITableViewDataSource {
+class SymptomsViewController: UIViewController, UITableViewDataSource {
     
     @IBOutlet weak var tableView: UITableView!
     
     let oralExamArray : [Symptom] = Symptom.setupOralExamArray()
-    var voiceQualityArray : [Symptom] = Symptom.setupVoiceQualityArray()
-    var prosodyArray : [Symptom] = Symptom.setupProsodyArray()
-    var articulationArray : [Symptom] = Symptom.setupArticulationArray()
-    var AMRArray : [Symptom] = Symptom.setupAMRArray()
-    var SMRArray : [Symptom] = Symptom.setupSMRArray()
-    var aphasiaArray : [Symptom] = Symptom.setupAphasiaArray()
+    let voiceQualityArray : [Symptom] = Symptom.setupVoiceQualityArray()
+    let prosodyArray : [Symptom] = Symptom.setupProsodyArray()
+    let articulationArray : [Symptom] = Symptom.setupArticulationArray()
+    let AMRArray : [Symptom] = Symptom.setupAMRArray()
+    let SMRArray : [Symptom] = Symptom.setupSMRArray()
+    let aphasiaArray : [Symptom] = Symptom.setupAphasiaArray()
     var sectionsArray = []
     
     override func viewDidLoad() {
@@ -105,6 +105,19 @@ class DiagnoseViewController: UIViewController, UITableViewDataSource {
             symptom.isSymptom = false
         }
         
+    }
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if segue.identifier == "DiagnosisSegue" {
+            var diagnosisVC = segue.destinationViewController as DiagnosisViewController
+            diagnosisVC.oralExamArray = self.oralExamArray
+            diagnosisVC.voiceQualityArray = self.voiceQualityArray
+            diagnosisVC.prosodyArray = self.prosodyArray
+            diagnosisVC.articulationArray = self.articulationArray
+            diagnosisVC.AMRArray = self.AMRArray
+            diagnosisVC.SMRArray = self.SMRArray
+            diagnosisVC.aphasiaArray = self.aphasiaArray
+        }
     }
     
     
