@@ -58,7 +58,7 @@
             </objects>
             <point key="canvasLocation" x="1192" y="337"/>
         </scene>
-        <!--Symptoms View Controller-->
+        <!--Speech Medic-->
         <scene sceneID="PrC-8s-tOI">
             <objects>
                 <viewController id="Owj-TE-SRg" customClass="SymptomsViewController" customModule="Speech_Medic" customModuleProvider="target" sceneMemberID="viewController">
@@ -121,16 +121,21 @@
                                 <items>
                                     <barButtonItem style="plain" systemItem="flexibleSpace" id="jZd-om-KfN"/>
                                     <barButtonItem title="Diagnose" id="HuG-X3-TRE">
+                                        <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                         <connections>
                                             <segue destination="hsP-SF-NGf" kind="presentation" identifier="DiagnosisSegue" id="ern-9x-HuC"/>
                                         </connections>
                                     </barButtonItem>
                                 </items>
+                                <color key="barTintColor" red="0.24919006229999999" green="0.63991189000000004" blue="0.247087419" alpha="1" colorSpace="calibratedRGB"/>
                             </toolbar>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="kxo-7c-dSM" firstAttribute="leading" secondItem="SSC-gs-l19" secondAttribute="leadingMargin" constant="-16" id="6xR-rk-FbB"/>
+                            <constraint firstAttribute="width" secondItem="cjA-bL-ONN" secondAttribute="width" id="AM8-AC-Wbf"/>
+                            <constraint firstItem="vZC-Aa-663" firstAttribute="top" secondItem="cjA-bL-ONN" secondAttribute="bottom" constant="-3" id="G2r-2b-IST"/>
+                            <constraint firstAttribute="centerX" secondItem="cjA-bL-ONN" secondAttribute="centerX" id="Igc-He-bW4"/>
                             <constraint firstAttribute="trailingMargin" secondItem="cjA-bL-ONN" secondAttribute="trailing" constant="-16" id="NXh-q6-2Vh"/>
                             <constraint firstItem="vZC-Aa-663" firstAttribute="top" secondItem="cjA-bL-ONN" secondAttribute="bottom" constant="-3" id="QN1-pc-oNw"/>
                             <constraint firstItem="vZC-Aa-663" firstAttribute="top" secondItem="kxo-7c-dSM" secondAttribute="bottom" constant="41" id="SGO-8z-chD"/>
@@ -138,8 +143,15 @@
                             <constraint firstAttribute="trailingMargin" secondItem="kxo-7c-dSM" secondAttribute="trailing" constant="-16" id="Udo-TQ-JeP"/>
                             <constraint firstItem="kxo-7c-dSM" firstAttribute="top" secondItem="JyH-LV-7ik" secondAttribute="bottom" constant="-64" id="WqL-Cg-ckE"/>
                         </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="NXh-q6-2Vh"/>
+                                <exclude reference="U0f-jc-wSZ"/>
+                                <exclude reference="QN1-pc-oNw"/>
+                            </mask>
+                        </variation>
                     </view>
-                    <navigationItem key="navigationItem" id="0m1-9u-D3S"/>
+                    <navigationItem key="navigationItem" title="Speech Medic" id="0m1-9u-D3S"/>
                     <connections>
                         <outlet property="tableView" destination="kxo-7c-dSM" id="3dU-V5-rUn"/>
                     </connections>
@@ -342,7 +354,7 @@
         <!--Navigation Controller-->
         <scene sceneID="dlC-3S-Bd9">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Lze-r7-ddK" sceneMemberID="viewController">
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Lze-r7-ddK" customClass="SMNavigationController" customModule="Speech_Medic" customModuleProvider="target" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="Cco-pc-0r0">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
