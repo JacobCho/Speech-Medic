@@ -14,7 +14,7 @@ class DiagnosisTableViewCell: UITableViewCell {
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var lesionSiteLabel: UILabel!
     @IBOutlet weak var percentageBackgroundView: UIView!
-    
+    @IBOutlet weak var percentageLabel: UILabel!
     override func awakeFromNib() {
         super.awakeFromNib()
         
