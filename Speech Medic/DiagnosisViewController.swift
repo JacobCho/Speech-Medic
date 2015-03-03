@@ -51,40 +51,15 @@ class DiagnosisViewController: UIViewController, UITableViewDataSource {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-         self.setupDiagnosis()
+        self.setupDiagnosis()
         
-        self.totalSymptoms = self.sumForFlaccidDys() + self.sumForSpasticDys() + self.sumForAtaxicDys() + self.sumForHypoDys() + self.sumForHyperDys() + self.sumForUniUMNDys() + self.sumForApraxiaSpeech() + self.sumForFlaccidSpas() + self.sumForAtaxicSpas()
-        
-        flaccidDys.certainty = self.getCertainty(self.sumForFlaccidDys(), total: self.totalSymptoms)
-        spasticDys.certainty = self.getCertainty(self.sumForSpasticDys(), total: self.totalSymptoms)
-        ataxicDys.certainty = self.getCertainty(self.sumForAtaxicDys(), total: self.totalSymptoms)
-        hypoDys.certainty = self.getCertainty(self.sumForHypoDys(), total: self.totalSymptoms)
-        hyperDys.certainty = self.getCertainty(self.sumForHyperDys(), total: self.totalSymptoms)
-        uniUMNDys.certainty = self.getCertainty(self.sumForUniUMNDys(), total: self.totalSymptoms)
-        apraxSpeech.certainty = self.getCertainty(self.sumForApraxiaSpeech(), total: self.totalSymptoms)
-        flaccidSpas.certainty = self.getCertainty(self.sumForFlaccidSpas(), total: self.totalSymptoms)
-        ataxicSpas.certainty = self.getCertainty(self.sumForAtaxicSpas(), total: self.totalSymptoms)
-        
-        self.tableView.reloadData()
+        self.setupCertainty()
     }
     
     override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(animated)
         
-        self.totalSymptoms = self.sumForFlaccidDys() + self.sumForSpasticDys() + self.sumForAtaxicDys() + self.sumForHypoDys() + self.sumForHyperDys() + self.sumForUniUMNDys() + self.sumForApraxiaSpeech() + self.sumForFlaccidSpas() + self.sumForAtaxicSpas()
-        
-        flaccidDys.certainty = self.getCertainty(self.sumForFlaccidDys(), total: self.totalSymptoms)
-        spasticDys.certainty = self.getCertainty(self.sumForSpasticDys(), total: self.totalSymptoms)
-        ataxicDys.certainty = self.getCertainty(self.sumForAtaxicDys(), total: self.totalSymptoms)
-        hypoDys.certainty = self.getCertainty(self.sumForHypoDys(), total: self.totalSymptoms)
-        hyperDys.certainty = self.getCertainty(self.sumForHyperDys(), total: self.totalSymptoms)
-        uniUMNDys.certainty = self.getCertainty(self.sumForUniUMNDys(), total: self.totalSymptoms)
-        apraxSpeech.certainty = self.getCertainty(self.sumForApraxiaSpeech(), total: self.totalSymptoms)
-        flaccidSpas.certainty = self.getCertainty(self.sumForFlaccidSpas(), total: self.totalSymptoms)
-        ataxicSpas.certainty = self.getCertainty(self.sumForAtaxicSpas(), total: self.totalSymptoms)
-        
-        self.tableView.reloadData()
-        
+        self.setupCertainty()
         
     }
     
@@ -111,10 +86,15 @@ class DiagnosisViewController: UIViewController, UITableViewDataSource {
         if let certainty = diagnosis.certainty {
             if certainty >= self.getMaxCertainty() {
                 cell.consistentLabel.text = "Consistent"
+                cell.percentageBackgroundView.backgroundColor = UIColor(red: 64.0/255.0, green: 163.0/255.0, blue: 63.0/255.0, alpha: 1)
             } else {
                 cell.consistentLabel.text = "Inconsistent"
+                cell.percentageBackgroundView.backgroundColor = UIColor(red: 239.0/255.0, green: 83.0/255.0, blue: 80.0/255.0, alpha: 1)
             }
             cell.percentageLabel.text = String(Int(certainty*100)) + "%"
+        } else {
+            cell.percentageBackgroundView.backgroundColor = UIColor(red: 239.0/255.0, green: 83.0/255.0, blue: 80.0/255.0, alpha: 1)
+            cell.percentageLabel.text = String(00)
         }
         
         return cell
@@ -425,6 +405,22 @@ class DiagnosisViewController: UIViewController, UITableViewDataSource {
         let certainty = Double(diagnosis)/Double(total)
         
         return certainty
+    }
+    
+    func setupCertainty() {
+        self.totalSymptoms = self.sumForFlaccidDys() + self.sumForSpasticDys() + self.sumForAtaxicDys() + self.sumForHypoDys() + self.sumForHyperDys() + self.sumForUniUMNDys() + self.sumForApraxiaSpeech() + self.sumForFlaccidSpas() + self.sumForAtaxicSpas()
+        
+        flaccidDys.certainty = self.getCertainty(self.sumForFlaccidDys(), total: self.totalSymptoms)
+        spasticDys.certainty = self.getCertainty(self.sumForSpasticDys(), total: self.totalSymptoms)
+        ataxicDys.certainty = self.getCertainty(self.sumForAtaxicDys(), total: self.totalSymptoms)
+        hypoDys.certainty = self.getCertainty(self.sumForHypoDys(), total: self.totalSymptoms)
+        hyperDys.certainty = self.getCertainty(self.sumForHyperDys(), total: self.totalSymptoms)
+        uniUMNDys.certainty = self.getCertainty(self.sumForUniUMNDys(), total: self.totalSymptoms)
+        apraxSpeech.certainty = self.getCertainty(self.sumForApraxiaSpeech(), total: self.totalSymptoms)
+        flaccidSpas.certainty = self.getCertainty(self.sumForFlaccidSpas(), total: self.totalSymptoms)
+        ataxicSpas.certainty = self.getCertainty(self.sumForAtaxicSpas(), total: self.totalSymptoms)
+        
+        self.tableView.reloadData()
     }
     
     func getMaxCertainty() -> Double{

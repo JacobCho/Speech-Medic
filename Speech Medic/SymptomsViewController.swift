@@ -26,6 +26,52 @@ class SymptomsViewController: UIViewController, UITableViewDataSource {
      
         self.sectionsArray = [self.oralExamArray, self.voiceQualityArray, self.prosodyArray, self.articulationArray, self.AMRArray, self.SMRArray, self.aphasiaArray]
     }
+    @IBAction func clearAllButtonPressed(sender: UIBarButtonItem) {
+        
+        for symptom in oralExamArray {
+            if symptom.isSymptom == true {
+                symptom.isSymptom = false
+            }
+        }
+        
+        for symptom in voiceQualityArray {
+            if symptom.isSymptom == true {
+                symptom.isSymptom = false
+            }
+        }
+        
+        for symptom in prosodyArray {
+            if symptom.isSymptom == true {
+                symptom.isSymptom = false
+            }
+        }
+        
+        for symptom in articulationArray {
+            if symptom.isSymptom == true {
+                symptom.isSymptom = false
+            }
+        }
+        
+        for symptom in AMRArray {
+            if symptom.isSymptom == true {
+                symptom.isSymptom = false
+            }
+        }
+        
+        for symptom in SMRArray {
+            if symptom.isSymptom == true {
+                symptom.isSymptom = false
+            }
+        }
+        
+        for symptom in aphasiaArray {
+            if symptom.isSymptom == true {
+                symptom.isSymptom = false
+            }
+        }
+        
+        self.tableView.reloadData()
+    }
     
     // MARK: UITableViewDataSource
     
