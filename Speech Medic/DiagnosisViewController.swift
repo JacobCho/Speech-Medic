@@ -45,21 +45,21 @@ class DiagnosisViewController: UIViewController, UITableViewDataSource {
     let speechApraxia = Diagnosis(name: "Apraxia of Speech", lesionSite: "Dominant cerebral hemisphere")
     let anomicAphasia = Diagnosis(name: "Anomic aphasia", lesionSite: "")
     
-    var diagnosisArray : [Diagnosis] = []
-    
+    var motorSpeechArray : [Diagnosis] = []
+    var aphasiaDiagnosisArray : [Diagnosis] = []
+    var diagnosisArray : [NSArray] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.setupDiagnosis()
+        self.setupMotorSpeechDiagnosis()
+        self.setupAphasiaDiagnosis()
         
         self.setupCertainty()
     }
     
     override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(animated)
-        
-        self.setupCertainty()
         
     }
     
@@ -69,16 +69,49 @@ class DiagnosisViewController: UIViewController, UITableViewDataSource {
         
     }
     
+    // MARK: UITableViewDataSource
+    
+    func numberOfSectionsInTableView(tableView: UITableView) -> Int {
+        
+        return self.diagnosisArray.count
+    }
+    
+    func tableView(tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        
+        let sectionHeaderView = UIView(frame: CGRectMake(0, 0, self.tableView.frame.width, 40))
+        sectionHeaderView.backgroundColor = UIColor.whiteColor()
+        sectionHeaderView.alpha = 0.9
+        
+        // Setup section header label
+        let sectionHeaderLabel = UILabel(frame: CGRectMake(10, 0, 300, sectionHeaderView.frame.height))
+        sectionHeaderLabel.font = UIFont.boldSystemFontOfSize(16)
+        sectionHeaderLabel.textColor = UIColor(red: 117.0/255.0, green: 117.0/255.0, blue: 117.0/255.0, alpha: 1)
+        
+        sectionHeaderView.addSubview(sectionHeaderLabel)
+        
+        switch section {
+        case 0:
+            sectionHeaderLabel.text = "Motor Speech Diagnosis"
+        case 1:
+            sectionHeaderLabel.text = "Aphasia Diagnosis"
+        default:
+            sectionHeaderLabel.text = ""
+            
+        }
+        
+        return sectionHeaderView
+    }
+    
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
-        return diagnosisArray.count
+        return diagnosisArray[section].count
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         
         let cell = tableView.dequeueReusableCellWithIdentifier("DiagnosisCell") as DiagnosisTableViewCell
         
-        let diagnosis = diagnosisArray[indexPath.row]
+        let diagnosis = diagnosisArray[indexPath.section][indexPath.row] as Diagnosis
         
         cell.nameLabel.text = diagnosis.name
         cell.lesionSiteLabel.text = diagnosis.possibleLesionSite
@@ -93,6 +126,7 @@ class DiagnosisViewController: UIViewController, UITableViewDataSource {
             }
             cell.percentageLabel.text = String(Int(certainty*100)) + "%"
         } else {
+            cell.consistentLabel.text = "Inconsistent"
             cell.percentageBackgroundView.backgroundColor = UIColor(red: 239.0/255.0, green: 83.0/255.0, blue: 80.0/255.0, alpha: 1)
             cell.percentageLabel.text = String(00)
         }
@@ -102,11 +136,18 @@ class DiagnosisViewController: UIViewController, UITableViewDataSource {
     
     // MARK: Summing Methods
     
-    func setupDiagnosis() {
-        diagnosisArray = [self.flaccidDys, self.spasticDys, self.ataxicDys, self.hypoDys, self.hyperDys, self.uniUMNDys, self.apraxSpeech, self.flaccidSpas, self.ataxicDys, self.conAphasia, self.brocha, self.wernickes, self.sensoryAphasia, self.motorAphasia, self.mixedAphasia, self.globalAphasia, self.speechApraxia, self.anomicAphasia]
+    func setupMotorSpeechDiagnosis() {
+        motorSpeechArray = [self.flaccidDys, self.spasticDys, self.ataxicDys, self.hypoDys, self.hyperDys, self.uniUMNDys, self.apraxSpeech, self.flaccidSpas, self.ataxicDys, self.conAphasia, self.brocha, self.wernickes, self.sensoryAphasia, self.motorAphasia, self.mixedAphasia, self.globalAphasia, self.speechApraxia, self.anomicAphasia]
+        
+        self.diagnosisArray = [self.motorSpeechArray]
         
         self.tableView.reloadData()
     }
+    
+    func setupAphasiaDiagnosis() {
+        aphasiaDiagnosisArray = [self.conAphasia, self.brocha, self.wernickes, self.sensoryAphasia, self.motorAphasia, self.mixedAphasia, self.globalAphasia, self.speechApraxia, self.anomicAphasia]
+    }
+    
     
     func sumForFlaccidDys() -> Int {
         
@@ -420,6 +461,12 @@ class DiagnosisViewController: UIViewController, UITableViewDataSource {
         flaccidSpas.certainty = self.getCertainty(self.sumForFlaccidSpas(), total: self.totalSymptoms)
         ataxicSpas.certainty = self.getCertainty(self.sumForAtaxicSpas(), total: self.totalSymptoms)
         
+        self.motorSpeechArray.sort({ $0.certainty > $1.certainty })
+
+        self.diagnosisArray.removeAll(keepCapacity: true)
+        self.diagnosisArray.append(self.motorSpeechArray)
+        self.diagnosisArray.append(self.aphasiaDiagnosisArray)
+        
         self.tableView.reloadData()
     }
     
@@ -427,7 +474,7 @@ class DiagnosisViewController: UIViewController, UITableViewDataSource {
         
         var maxCertainty : Double = 0.0
         
-        for diagnosis in diagnosisArray {
+        for diagnosis in motorSpeechArray {
             if let certainty = diagnosis.certainty {
                 if certainty >= maxCertainty {
                     maxCertainty = certainty

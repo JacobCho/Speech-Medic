@@ -13,4 +13,9 @@ class SymptomTableViewCell: UITableViewCell {
     @IBOutlet weak var symptomLabel: UILabel!
     @IBOutlet weak var symptomSwitch: UISwitch!
     
+    override func awakeFromNib() {
+        super.awakeFromNib()
+//        symptomSwitch.enabled = false
+    }
+    
 }

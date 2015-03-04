@@ -5,59 +5,6 @@
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
-        <!--Patients-->
-        <scene sceneID="ufC-wZ-h7g">
-            <objects>
-                <viewController id="vXZ-lx-hvc" customClass="PatientsViewController" customModule="Speech_Medic" customModuleProvider="target" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="jyV-Pf-zRb"/>
-                        <viewControllerLayoutGuide type="bottom" id="2fi-mo-0CV"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="kh9-bI-dsS">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="52" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="Us4-Ym-9Bz">
-                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <prototypes>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="PatientCell" rowHeight="52" id="INd-DZ-Nxr">
-                                        <rect key="frame" x="0.0" y="0.0" width="600" height="44"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="INd-DZ-Nxr" id="xEN-zN-NZU">
-                                            <autoresizingMask key="autoresizingMask"/>
-                                        </tableViewCellContentView>
-                                    </tableViewCell>
-                                </prototypes>
-                                <connections>
-                                    <outlet property="dataSource" destination="vXZ-lx-hvc" id="s0n-SF-ngX"/>
-                                    <outlet property="delegate" destination="vXZ-lx-hvc" id="0Qh-rt-Bsc"/>
-                                </connections>
-                            </tableView>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
-                        <constraints>
-                            <constraint firstItem="Us4-Ym-9Bz" firstAttribute="top" secondItem="jyV-Pf-zRb" secondAttribute="bottom" constant="-64" id="Ai8-yl-oI7"/>
-                            <constraint firstItem="2fi-mo-0CV" firstAttribute="top" secondItem="Us4-Ym-9Bz" secondAttribute="bottom" id="IOj-A6-sHe"/>
-                            <constraint firstItem="Us4-Ym-9Bz" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" constant="-16" id="o7h-qy-ouS"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="Us4-Ym-9Bz" secondAttribute="trailing" constant="-16" id="x2e-ZF-khR"/>
-                        </constraints>
-                    </view>
-                    <navigationItem key="navigationItem" title="Patients" id="UtQ-tx-Q8n">
-                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="5gr-B4-waB">
-                            <connections>
-                                <action selector="addPatient:" destination="vXZ-lx-hvc" id="hvc-DK-yjU"/>
-                            </connections>
-                        </barButtonItem>
-                    </navigationItem>
-                    <connections>
-                        <outlet property="tableView" destination="Us4-Ym-9Bz" id="tqA-Wy-QBm"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1192" y="337"/>
-        </scene>
         <!--Speech Medic-->
         <scene sceneID="PrC-8s-tOI">
             <objects>
@@ -71,7 +18,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="68" sectionHeaderHeight="40" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="kxo-7c-dSM">
-                                <rect key="frame" x="0.0" y="0.0" width="600" height="559"/>
+                                <rect key="frame" x="0.0" y="64" width="600" height="495"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="SymptomCell" rowHeight="68" id="FfS-TZ-8WB" customClass="SymptomTableViewCell" customModule="Speech_Medic" customModuleProvider="target">
@@ -127,7 +74,7 @@
                                         </connections>
                                     </barButtonItem>
                                 </items>
-                                <color key="barTintColor" red="0.24919006229999999" green="0.63991189000000004" blue="0.247087419" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="barTintColor" red="0.29803921570000003" green="0.68627450980000004" blue="0.31372549020000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </toolbar>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -141,7 +88,7 @@
                             <constraint firstItem="vZC-Aa-663" firstAttribute="top" secondItem="kxo-7c-dSM" secondAttribute="bottom" constant="41" id="SGO-8z-chD"/>
                             <constraint firstItem="cjA-bL-ONN" firstAttribute="leading" secondItem="SSC-gs-l19" secondAttribute="leadingMargin" constant="-16" id="U0f-jc-wSZ"/>
                             <constraint firstAttribute="trailingMargin" secondItem="kxo-7c-dSM" secondAttribute="trailing" constant="-16" id="Udo-TQ-JeP"/>
-                            <constraint firstItem="kxo-7c-dSM" firstAttribute="top" secondItem="JyH-LV-7ik" secondAttribute="bottom" constant="-64" id="WqL-Cg-ckE"/>
+                            <constraint firstItem="kxo-7c-dSM" firstAttribute="top" secondItem="JyH-LV-7ik" secondAttribute="bottom" id="WqL-Cg-ckE"/>
                         </constraints>
                         <variation key="default">
                             <mask key="constraints">
@@ -165,7 +112,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="VMK-Ob-fOT" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2871" y="328"/>
+            <point key="canvasLocation" x="2870" y="337"/>
         </scene>
         <!--Diagnosis View Controller-->
         <scene sceneID="lPD-aJ-GLL">
@@ -179,10 +126,10 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view opaque="NO" alpha="0.89999999999999991" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="CiP-4I-jbJ">
+                            <view opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="CiP-4I-jbJ">
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="64"/>
                                 <subviews>
-                                    <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2Kc-fe-rBS">
+                                    <navigationBar contentMode="scaleToFill" translucent="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2Kc-fe-rBS">
                                         <rect key="frame" x="0.0" y="20" width="600" height="44"/>
                                         <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                         <color key="barTintColor" red="0.24919006229999999" green="0.63991189000000004" blue="0.247087419" alpha="1" colorSpace="calibratedRGB"/>
@@ -205,7 +152,7 @@
                                     <constraint firstAttribute="trailing" secondItem="2Kc-fe-rBS" secondAttribute="trailing" id="hUg-0b-CBz"/>
                                 </constraints>
                             </view>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="71" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="qom-Ph-XG0">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="71" sectionHeaderHeight="40" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="qom-Ph-XG0">
                                 <rect key="frame" x="0.0" y="65" width="600" height="535"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
@@ -340,24 +287,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="VgP-mZ-Rmx" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="3620" y="328"/>
-        </scene>
-        <!--Navigation Controller-->
-        <scene sceneID="fJj-rY-43k">
-            <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="ymV-lh-7GH" sceneMemberID="viewController">
-                    <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="AUK-Ac-pxQ">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <nil name="viewControllers"/>
-                    <connections>
-                        <segue destination="vXZ-lx-hvc" kind="relationship" relationship="rootViewController" id="bOU-jf-MSb"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="NIG-IT-jZk" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="473" y="337"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="dlC-3S-Bd9">

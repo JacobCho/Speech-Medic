@@ -60,9 +60,9 @@ class Symptom: NSObject {
         
         let rapidDetWRestSymptom = Symptom(name: "Rapid deterioration, recovery with rest")
         let rapidDetSymptom = Symptom(name: "Rapid deterioration with increased rate")
-        let impreciseBreakdownsSymptom = Symptom(name: "imprecise breakdowns or articulation")
-        let articulatoryGropingSymptom = Symptom(name: "articulatory groping, self-correction attempts")
-        let increasedErrorsSymptom = Symptom(name: "increased errors with increased length, automatic speech better")
+        let impreciseBreakdownsSymptom = Symptom(name: "Imprecise breakdowns or articulation")
+        let articulatoryGropingSymptom = Symptom(name: "Articulatory groping, self-correction attempts")
+        let increasedErrorsSymptom = Symptom(name: "Increased errors with increased length, automatic speech better")
         
         let articulationArray = [rapidDetWRestSymptom, rapidDetSymptom, impreciseBreakdownsSymptom, articulatoryGropingSymptom, increasedErrorsSymptom]
         

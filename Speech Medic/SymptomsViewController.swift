@@ -91,7 +91,7 @@ class SymptomsViewController: UIViewController, UITableViewDataSource {
         sectionHeaderLabel.font = UIFont.boldSystemFontOfSize(16)
         sectionHeaderLabel.textColor = UIColor(red: 117.0/255.0, green: 117.0/255.0, blue: 117.0/255.0, alpha: 1)
         
-         sectionHeaderView.addSubview(sectionHeaderLabel)
+        sectionHeaderView.addSubview(sectionHeaderLabel)
         
         switch section {
             case 0:
@@ -138,14 +138,15 @@ class SymptomsViewController: UIViewController, UITableViewDataSource {
         return cell
     }
     
+    // MARK: Helper Methods
+    
     func switchTriggered(sender: UISwitch) {
-        let cellSwitch : UISwitch = sender
-        let tableCell : UITableViewCell = cellSwitch.superview?.superview as UITableViewCell
+        let tableCell : UITableViewCell = sender.superview?.superview as UITableViewCell
         let indexPath = self.tableView.indexPathForCell(tableCell)
         
         let symptom = self.sectionsArray[indexPath!.section][indexPath!.row] as Symptom
         
-        if cellSwitch.on == true {
+        if sender.on == true {
             symptom.isSymptom = true
         } else {
             symptom.isSymptom = false

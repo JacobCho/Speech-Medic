@@ -13,14 +13,10 @@
 		524FC4951AA12AA9004B86D3 /* SymptomTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 524FC4941AA12AA9004B86D3 /* SymptomTableViewCell.swift */; };
 		524FC4971AA13346004B86D3 /* Symptom.swift in Sources */ = {isa = PBXBuildFile; fileRef = 524FC4961AA13346004B86D3 /* Symptom.swift */; };
 		527D9F251A9FA9F500435FB9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 527D9F241A9FA9F500435FB9 /* AppDelegate.swift */; };
-		527D9F281A9FA9F500435FB9 /* Speech_Medic.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 527D9F261A9FA9F500435FB9 /* Speech_Medic.xcdatamodeld */; };
 		527D9F2D1A9FA9F500435FB9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 527D9F2B1A9FA9F500435FB9 /* Main.storyboard */; };
 		527D9F2F1A9FA9F500435FB9 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 527D9F2E1A9FA9F500435FB9 /* Images.xcassets */; };
 		527D9F321A9FA9F500435FB9 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 527D9F301A9FA9F500435FB9 /* LaunchScreen.xib */; };
 		527D9F3E1A9FA9F500435FB9 /* Speech_MedicTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 527D9F3D1A9FA9F500435FB9 /* Speech_MedicTests.swift */; };
-		527D9F481A9FAA6F00435FB9 /* PatientsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 527D9F471A9FAA6F00435FB9 /* PatientsViewController.swift */; };
-		52D909AC1AA006BA00E0F82D /* Patient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52D909AB1AA006BA00E0F82D /* Patient.swift */; };
-		52D909AE1AA006BB00E0F82D /* Symptoms.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52D909AD1AA006BB00E0F82D /* Symptoms.swift */; };
 		52D909B11AA03E5D00E0F82D /* SymptomsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52D909B01AA03E5D00E0F82D /* SymptomsViewController.swift */; };
 		52EE335C1AA4E393006CABA4 /* SMNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52EE335B1AA4E393006CABA4 /* SMNavigationController.swift */; };
 /* End PBXBuildFile section */
@@ -44,17 +40,13 @@
 		527D9F1F1A9FA9F500435FB9 /* Speech Medic.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Speech Medic.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		527D9F231A9FA9F500435FB9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		527D9F241A9FA9F500435FB9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		527D9F271A9FA9F500435FB9 /* Speech_Medic.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Speech_Medic.xcdatamodel; sourceTree = "<group>"; };
 		527D9F2C1A9FA9F500435FB9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		527D9F2E1A9FA9F500435FB9 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		527D9F311A9FA9F500435FB9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		527D9F371A9FA9F500435FB9 /* Speech MedicTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Speech MedicTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		527D9F3C1A9FA9F500435FB9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		527D9F3D1A9FA9F500435FB9 /* Speech_MedicTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Speech_MedicTests.swift; sourceTree = "<group>"; };
-		527D9F471A9FAA6F00435FB9 /* PatientsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PatientsViewController.swift; sourceTree = "<group>"; };
 		52D909A41AA0067100E0F82D /* Speech Medic-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Speech Medic-Bridging-Header.h"; sourceTree = "<group>"; };
-		52D909AB1AA006BA00E0F82D /* Patient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Patient.swift; sourceTree = "<group>"; };
-		52D909AD1AA006BB00E0F82D /* Symptoms.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Symptoms.swift; sourceTree = "<group>"; };
 		52D909B01AA03E5D00E0F82D /* SymptomsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SymptomsViewController.swift; sourceTree = "<group>"; };
 		52EE335B1AA4E393006CABA4 /* SMNavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SMNavigationController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -113,7 +105,6 @@
 				527D9F2B1A9FA9F500435FB9 /* Main.storyboard */,
 				527D9F2E1A9FA9F500435FB9 /* Images.xcassets */,
 				527D9F301A9FA9F500435FB9 /* LaunchScreen.xib */,
-				527D9F261A9FA9F500435FB9 /* Speech_Medic.xcdatamodeld */,
 				527D9F221A9FA9F500435FB9 /* Supporting Files */,
 				52D909A41AA0067100E0F82D /* Speech Medic-Bridging-Header.h */,
 			);
@@ -149,9 +140,7 @@
 		52D909AF1AA006C800E0F82D /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				52D909AD1AA006BB00E0F82D /* Symptoms.swift */,
 				521DAAA01AA2811100077176 /* Diagnosis.swift */,
-				52D909AB1AA006BA00E0F82D /* Patient.swift */,
 				524FC4961AA13346004B86D3 /* Symptom.swift */,
 			);
 			name = Models;
@@ -162,7 +151,6 @@
 			isa = PBXGroup;
 			children = (
 				521DAA9E1AA24BF900077176 /* DiagnosisViewController.swift */,
-				527D9F471A9FAA6F00435FB9 /* PatientsViewController.swift */,
 				52D909B01AA03E5D00E0F82D /* SymptomsViewController.swift */,
 				52EE335B1AA4E393006CABA4 /* SMNavigationController.swift */,
 			);
@@ -269,13 +257,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				52D909AE1AA006BB00E0F82D /* Symptoms.swift in Sources */,
 				524FC4971AA13346004B86D3 /* Symptom.swift in Sources */,
-				527D9F481A9FAA6F00435FB9 /* PatientsViewController.swift in Sources */,
 				52D909B11AA03E5D00E0F82D /* SymptomsViewController.swift in Sources */,
-				52D909AC1AA006BA00E0F82D /* Patient.swift in Sources */,
 				521DAA9F1AA24BF900077176 /* DiagnosisViewController.swift in Sources */,
-				527D9F281A9FA9F500435FB9 /* Speech_Medic.xcdatamodeld in Sources */,
 				52EE335C1AA4E393006CABA4 /* SMNavigationController.swift in Sources */,
 				521DAAA11AA2811100077176 /* Diagnosis.swift in Sources */,
 				521DAAA31AA2A65500077176 /* DiagnosisTableViewCell.swift in Sources */,
@@ -489,19 +473,6 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
-
-/* Begin XCVersionGroup section */
-		527D9F261A9FA9F500435FB9 /* Speech_Medic.xcdatamodeld */ = {
-			isa = XCVersionGroup;
-			children = (
-				527D9F271A9FA9F500435FB9 /* Speech_Medic.xcdatamodel */,
-			);
-			currentVersion = 527D9F271A9FA9F500435FB9 /* Speech_Medic.xcdatamodel */;
-			path = Speech_Medic.xcdatamodeld;
-			sourceTree = "<group>";
-			versionGroupType = wrapper.xcdatamodel;
-		};
-/* End XCVersionGroup section */
 	};
 	rootObject = 527D9F171A9FA9F500435FB9 /* Project object */;
 }

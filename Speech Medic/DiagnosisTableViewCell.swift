@@ -15,12 +15,12 @@ class DiagnosisTableViewCell: UITableViewCell {
     @IBOutlet weak var lesionSiteLabel: UILabel!
     @IBOutlet weak var percentageBackgroundView: UIView!
     @IBOutlet weak var percentageLabel: UILabel!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         
         self.percentageBackgroundView.layer.cornerRadius = 27
         self.percentageBackgroundView.clipsToBounds = true
-    
     }
     
 }
