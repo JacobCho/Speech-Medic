@@ -19,7 +19,7 @@ class DiagnosisViewController: UIViewController, UITableViewDataSource {
     var articulationArray : [Symptom] = [] // 5
     var AMRArray : [Symptom] = [] // 3
     var SMRArray : [Symptom] = [] // 1
-    var aphasiaArray : [Symptom] = []
+    var aphasiaArray : [Symptom] = [] // 3
     var totalSymptoms : Int = 0
     
     // Diagnosis'
@@ -116,19 +116,36 @@ class DiagnosisViewController: UIViewController, UITableViewDataSource {
         cell.nameLabel.text = diagnosis.name
         cell.lesionSiteLabel.text = diagnosis.possibleLesionSite
         
-        if let certainty = diagnosis.certainty {
-            if certainty >= self.getMaxCertainty() {
-                cell.consistentLabel.text = "Consistent"
-                cell.percentageBackgroundView.backgroundColor = UIColor(red: 64.0/255.0, green: 163.0/255.0, blue: 63.0/255.0, alpha: 1)
+        if indexPath.section == 0 {
+            cell.percentageBackgroundView.hidden = false
+            cell.percentageLabel.hidden = false
+        
+            if let certainty = diagnosis.certainty {
+                if certainty >= self.getMaxCertainty() {
+                    cell.consistentLabel.text = "Consistent"
+                    cell.percentageBackgroundView.backgroundColor = UIColor(red: 64.0/255.0, green: 163.0/255.0, blue: 63.0/255.0, alpha: 1)
+                } else {
+                    cell.consistentLabel.text = "Inconsistent"
+                    cell.percentageBackgroundView.backgroundColor = UIColor(red: 239.0/255.0, green: 83.0/255.0, blue: 80.0/255.0, alpha: 1)
+                }
+                cell.percentageLabel.text = String(Int(certainty*100)) + "%"
             } else {
                 cell.consistentLabel.text = "Inconsistent"
                 cell.percentageBackgroundView.backgroundColor = UIColor(red: 239.0/255.0, green: 83.0/255.0, blue: 80.0/255.0, alpha: 1)
+                cell.percentageLabel.text = String(00)
             }
-            cell.percentageLabel.text = String(Int(certainty*100)) + "%"
         } else {
-            cell.consistentLabel.text = "Inconsistent"
-            cell.percentageBackgroundView.backgroundColor = UIColor(red: 239.0/255.0, green: 83.0/255.0, blue: 80.0/255.0, alpha: 1)
-            cell.percentageLabel.text = String(00)
+            
+            if diagnosis.isConsistent == true {
+                cell.consistentLabel.text = "Consistent"
+
+            } else {
+                cell.consistentLabel.text = "Inconsistent"
+
+            }
+            
+            cell.percentageBackgroundView.hidden = true
+            cell.percentageLabel.hidden = true
         }
         
         return cell
@@ -462,6 +479,8 @@ class DiagnosisViewController: UIViewController, UITableViewDataSource {
         ataxicSpas.certainty = self.getCertainty(self.sumForAtaxicSpas(), total: self.totalSymptoms)
         
         self.motorSpeechArray.sort({ $0.certainty > $1.certainty })
+        
+        self.getAphasiaDiagnosis()
 
         self.diagnosisArray.removeAll(keepCapacity: true)
         self.diagnosisArray.append(self.motorSpeechArray)
@@ -483,6 +502,64 @@ class DiagnosisViewController: UIViewController, UITableViewDataSource {
         }
         
         return maxCertainty
+    }
+    
+    func getAphasiaDiagnosis() {
+        
+        // Conduction Aphasia
+        if self.aphasiaArray[0].isSymptom && self.aphasiaArray[1].isSymptom && !self.aphasiaArray[2].isSymptom {
+            self.aphasiaDiagnosisArray[0].isConsistent == true
+            
+        }
+        
+        // Broca's Aphasia
+        if !self.aphasiaArray[0].isSymptom && self.aphasiaArray[1].isSymptom && !self.aphasiaArray[2].isSymptom {
+            self.aphasiaDiagnosisArray[1].isConsistent == true
+            
+        }
+        
+        // Wernicke's Aphasia
+        if self.aphasiaArray[0].isSymptom && !self.aphasiaArray[1].isSymptom && !self.aphasiaArray[2].isSymptom {
+            self.aphasiaDiagnosisArray[2].isConsistent = true
+            
+        }
+        
+        // Transcortical Sensory Aphasia
+        if self.aphasiaArray[0].isSymptom && !self.aphasiaArray[1].isSymptom && self.aphasiaArray[2].isSymptom {
+            self.aphasiaDiagnosisArray[3].isConsistent = true
+            
+        }
+        
+        // Transcortical Motor Aphasia
+        if !self.aphasiaArray[0].isSymptom && self.aphasiaArray[1].isSymptom && self.aphasiaArray[2].isSymptom {
+            self.aphasiaDiagnosisArray[4].isConsistent = true
+            
+        }
+        
+        // Transcortical Mixed Aphasia
+        if !self.aphasiaArray[0].isSymptom && !self.aphasiaArray[1].isSymptom && self.aphasiaArray[2].isSymptom {
+            self.aphasiaDiagnosisArray[5].isConsistent = true
+            
+        }
+        
+        // Global Aphasia
+        if !self.aphasiaArray[0].isSymptom && !self.aphasiaArray[1].isSymptom && !self.aphasiaArray[2].isSymptom {
+            self.aphasiaDiagnosisArray[6].isConsistent = true
+        }
+        
+        // Apraxia of Speech
+        if !self.aphasiaArray[0].isSymptom && self.aphasiaArray[1].isSymptom && !self.aphasiaArray[2].isSymptom {
+            
+            self.aphasiaDiagnosisArray[7].isConsistent = true
+        }
+        
+        // Anomic Aphasia
+        if self.aphasiaArray[0].isSymptom && self.aphasiaArray[1].isSymptom && self.aphasiaArray[2].isSymptom {
+            
+            self.aphasiaDiagnosisArray[8].isConsistent = true
+        }
+        
+        
     }
     
 
