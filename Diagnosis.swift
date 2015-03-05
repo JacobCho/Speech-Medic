@@ -8,18 +8,12 @@
 
 import Foundation
 
-enum Type {
-    case MotorSpeech
-    case Aphasia
-}
-
 class Diagnosis: NSObject {
     
     var name : String
     var isConsistent : Bool = false
     var possibleLesionSite : String
     var certainty : Double?
-    var type : Type?
     
     init(name: String, lesionSite: String) {
         

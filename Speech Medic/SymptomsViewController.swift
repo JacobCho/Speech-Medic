@@ -1,5 +1,5 @@
 //
-//  DiagnoseViewController.swift
+//  SymptomsViewController.swift
 //  Speech Medic
 //
 //  Created by Jacob Cho on 2015-02-26.
@@ -11,6 +11,7 @@ import UIKit
 class SymptomsViewController: UIViewController, UITableViewDataSource {
     
     @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var diagnosisButton: UIButton!
     
     let oralExamArray : [Symptom] = Symptom.setupOralExamArray()
     let voiceQualityArray : [Symptom] = Symptom.setupVoiceQualityArray()
@@ -25,6 +26,12 @@ class SymptomsViewController: UIViewController, UITableViewDataSource {
         super.viewDidLoad()
      
         self.sectionsArray = [self.oralExamArray, self.voiceQualityArray, self.prosodyArray, self.articulationArray, self.AMRArray, self.SMRArray, self.aphasiaArray]
+        
+        self.tableView.contentInset = UIEdgeInsetsMake(0, 0, 90, 0)
+        self.diagnosisButton.layer.masksToBounds = false
+        self.diagnosisButton.layer.shadowOpacity = 0.2
+        self.diagnosisButton.layer.shadowRadius = 0.5
+        self.diagnosisButton.layer.shadowOffset = CGSizeMake(1.0, 3.0)
     }
     @IBAction func clearAllButtonPressed(sender: UIBarButtonItem) {
         

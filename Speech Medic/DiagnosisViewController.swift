@@ -31,19 +31,19 @@ class DiagnosisViewController: UIViewController, UITableViewDataSource {
     let hyperDys = Diagnosis(name: "Hyperkinetic Dysarthria", lesionSite: "Basal ganglia")
     let uniUMNDys = Diagnosis(name: "Unilateral UMN Dysarthria", lesionSite: "Brainstem or cerebrum")
     let apraxSpeech = Diagnosis(name: "Apraxia of Speech", lesionSite: "Dominant cerebral hemisphere")
-    let flaccidSpas = Diagnosis(name: "Mixed (flaccid-spastic)", lesionSite: "Amyotrophic lateral sclerosis (ALS)")
-    let ataxicSpas = Diagnosis(name: "Mixed (ataxic-spastic)", lesionSite: "Multiple sclerosis (MS)")
+    let flaccidSpas = Diagnosis(name: "Mixed (Flaccid-Spastic)", lesionSite: "Amyotrophic lateral sclerosis (ALS)")
+    let ataxicSpas = Diagnosis(name: "Mixed (Ataxic-Spastic)", lesionSite: "Multiple sclerosis (MS)")
     
     // Aphasia
-    let conAphasia = Diagnosis(name: "Conduction aphasia", lesionSite: "Parietal, above Wernicke's")
-    let brocha = Diagnosis(name: "Broca's aphasia", lesionSite: "Brodmann area 44")
-    let wernickes = Diagnosis(name: "Wernicke's aphasia", lesionSite: "Brodmann area 22")
-    let sensoryAphasia = Diagnosis(name: "Transcortical sensory aphasia", lesionSite: "Temporal lobe")
-    let motorAphasia = Diagnosis(name: "Transcortical motor aphasia", lesionSite: "Frontal lobe")
-    let mixedAphasia = Diagnosis(name: "Transcortical mixed aphasia", lesionSite: "Frontal and temporal lobe")
-    let globalAphasia = Diagnosis(name: "Global aphasia", lesionSite: "Dominant cerebral hemisphere")
+    let conAphasia = Diagnosis(name: "Conduction Aphasia", lesionSite: "Parietal, above Wernicke's")
+    let brocha = Diagnosis(name: "Broca's Aphasia", lesionSite: "Brodmann area 44")
+    let wernickes = Diagnosis(name: "Wernicke's Aphasia", lesionSite: "Brodmann area 22")
+    let sensoryAphasia = Diagnosis(name: "Transcortical Sensory Aphasia", lesionSite: "Temporal lobe")
+    let motorAphasia = Diagnosis(name: "Transcortical Motor Aphasia", lesionSite: "Frontal lobe")
+    let mixedAphasia = Diagnosis(name: "Transcortical Mixed Aphasia", lesionSite: "Frontal and temporal lobe")
+    let globalAphasia = Diagnosis(name: "Global Aphasia", lesionSite: "Dominant cerebral hemisphere")
     let speechApraxia = Diagnosis(name: "Apraxia of Speech", lesionSite: "Dominant cerebral hemisphere")
-    let anomicAphasia = Diagnosis(name: "Anomic aphasia", lesionSite: "")
+    let anomicAphasia = Diagnosis(name: "Anomic Aphasia", lesionSite: "")
     
     var motorSpeechArray : [Diagnosis] = []
     var aphasiaDiagnosisArray : [Diagnosis] = []
@@ -157,12 +157,13 @@ class DiagnosisViewController: UIViewController, UITableViewDataSource {
         motorSpeechArray = [self.flaccidDys, self.spasticDys, self.ataxicDys, self.hypoDys, self.hyperDys, self.uniUMNDys, self.apraxSpeech, self.flaccidSpas, self.ataxicDys, self.conAphasia, self.brocha, self.wernickes, self.sensoryAphasia, self.motorAphasia, self.mixedAphasia, self.globalAphasia, self.speechApraxia, self.anomicAphasia]
         
         self.diagnosisArray = [self.motorSpeechArray]
-        
-        self.tableView.reloadData()
     }
     
     func setupAphasiaDiagnosis() {
         aphasiaDiagnosisArray = [self.conAphasia, self.brocha, self.wernickes, self.sensoryAphasia, self.motorAphasia, self.mixedAphasia, self.globalAphasia, self.speechApraxia, self.anomicAphasia]
+        
+        self.getAphasiaDiagnosis()
+        self.sortAphasiaArray()
     }
     
     
@@ -479,8 +480,6 @@ class DiagnosisViewController: UIViewController, UITableViewDataSource {
         ataxicSpas.certainty = self.getCertainty(self.sumForAtaxicSpas(), total: self.totalSymptoms)
         
         self.motorSpeechArray.sort({ $0.certainty > $1.certainty })
-        
-        self.getAphasiaDiagnosis()
 
         self.diagnosisArray.removeAll(keepCapacity: true)
         self.diagnosisArray.append(self.motorSpeechArray)
@@ -558,11 +557,16 @@ class DiagnosisViewController: UIViewController, UITableViewDataSource {
             
             self.aphasiaDiagnosisArray[8].isConsistent = true
         }
-        
-        
     }
     
-
-    
-    
+    func sortAphasiaArray() {
+        
+        for var i = 0; i < self.aphasiaDiagnosisArray.count; i++ {
+            if self.aphasiaDiagnosisArray[i].isConsistent {
+                self.aphasiaDiagnosisArray.insert(self.aphasiaDiagnosisArray[i], atIndex: 0)
+                self.aphasiaDiagnosisArray.removeAtIndex(i+1)
+            }
+            
+        }
+    }
 }
