@@ -117,22 +117,18 @@ class DiagnosisViewController: UIViewController, UITableViewDataSource {
         cell.lesionSiteLabel.text = diagnosis.possibleLesionSite
         
         if indexPath.section == 0 {
-            cell.percentageBackgroundView.hidden = false
             cell.percentageLabel.hidden = false
         
             if let certainty = diagnosis.certainty {
                 if certainty >= self.getMaxCertainty() {
                     cell.consistentLabel.text = "Consistent"
-                    cell.percentageBackgroundView.backgroundColor = UIColor(red: 64.0/255.0, green: 163.0/255.0, blue: 63.0/255.0, alpha: 1)
                 } else {
                     cell.consistentLabel.text = "Inconsistent"
-                    cell.percentageBackgroundView.backgroundColor = UIColor(red: 239.0/255.0, green: 83.0/255.0, blue: 80.0/255.0, alpha: 1)
                 }
                 cell.percentageLabel.text = String(Int(certainty*100)) + "%"
             } else {
                 cell.consistentLabel.text = "Inconsistent"
-                cell.percentageBackgroundView.backgroundColor = UIColor(red: 239.0/255.0, green: 83.0/255.0, blue: 80.0/255.0, alpha: 1)
-                cell.percentageLabel.text = String(00)
+                cell.percentageLabel.hidden = true
             }
         } else {
             
@@ -143,8 +139,6 @@ class DiagnosisViewController: UIViewController, UITableViewDataSource {
                 cell.consistentLabel.text = "Inconsistent"
 
             }
-            
-            cell.percentageBackgroundView.hidden = true
             cell.percentageLabel.hidden = true
         }
         
