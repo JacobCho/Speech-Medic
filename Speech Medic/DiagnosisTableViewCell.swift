@@ -12,7 +12,6 @@ class DiagnosisTableViewCell: UITableViewCell {
 
     @IBOutlet weak var consistentLabel: UILabel!
     @IBOutlet weak var nameLabel: UILabel!
-    @IBOutlet weak var lesionSiteLabel: UILabel!
     @IBOutlet weak var percentageLabel: UILabel!
     
 }

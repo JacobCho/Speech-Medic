@@ -79,14 +79,13 @@ class DiagnosisViewController: UIViewController, UITableViewDataSource {
     func tableView(tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         
         let sectionHeaderView = UIView(frame: CGRectMake(0, 0, self.tableView.frame.width, 40))
-        sectionHeaderView.backgroundColor = UIColor.whiteColor()
+        sectionHeaderView.backgroundColor = UIColor(red: 197.0/255.0, green: 225.0/255.0, blue: 165.0/255.0, alpha: 1)
         sectionHeaderView.alpha = 0.9
         
         // Setup section header label
         let sectionHeaderLabel = UILabel(frame: CGRectMake(10, 0, 300, sectionHeaderView.frame.height))
         sectionHeaderLabel.font = UIFont.boldSystemFontOfSize(16)
-        sectionHeaderLabel.textColor = UIColor(red: 117.0/255.0, green: 117.0/255.0, blue: 117.0/255.0, alpha: 1)
-        
+        sectionHeaderLabel.textColor = UIColor.whiteColor()
         sectionHeaderView.addSubview(sectionHeaderLabel)
         
         switch section {
@@ -114,7 +113,6 @@ class DiagnosisViewController: UIViewController, UITableViewDataSource {
         let diagnosis = diagnosisArray[indexPath.section][indexPath.row] as Diagnosis
         
         cell.nameLabel.text = diagnosis.name
-        cell.lesionSiteLabel.text = diagnosis.possibleLesionSite
         
         if indexPath.section == 0 {
             cell.percentageLabel.hidden = false
