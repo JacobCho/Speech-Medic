@@ -8,7 +8,7 @@
 
 import UIKit
 
-class DiagnosisViewController: UIViewController, UITableViewDataSource {
+class DiagnosisViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
 
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var navigationBar: UINavigationBar!
@@ -119,22 +119,22 @@ class DiagnosisViewController: UIViewController, UITableViewDataSource {
         
             if let certainty = diagnosis.certainty {
                 if certainty >= self.getMaxCertainty() {
-                    cell.consistentLabel.text = "Consistent"
+                    cell.consistentImageView.image = UIImage(named: "consistentIcon")
                 } else {
-                    cell.consistentLabel.text = "Inconsistent"
+                    cell.consistentImageView.image = UIImage(named: "unconsistentIcon")
                 }
                 cell.percentageLabel.text = String(Int(certainty*100)) + "%"
             } else {
-                cell.consistentLabel.text = "Inconsistent"
+                cell.consistentImageView.image = UIImage(named: "unconsistentIcon")
                 cell.percentageLabel.hidden = true
             }
         } else {
             
             if diagnosis.isConsistent == true {
-                cell.consistentLabel.text = "Consistent"
+                cell.consistentImageView.image = UIImage(named: "consistentIcon")
 
             } else {
-                cell.consistentLabel.text = "Inconsistent"
+                cell.consistentImageView.image = UIImage(named: "unconsistentIcon")
 
             }
             cell.percentageLabel.hidden = true

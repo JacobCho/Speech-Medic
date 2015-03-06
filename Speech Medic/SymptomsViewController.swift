@@ -93,14 +93,14 @@ class SymptomsViewController: UIViewController, UITableViewDataSource {
         sectionHeaderView.backgroundColor = UIColor(red: 197.0/255.0, green: 225.0/255.0, blue: 165.0/255.0, alpha: 1)
         sectionHeaderView.alpha = 0.9
         
+        // Setup section speech bubble image
         let speechButtonImageView = UIImageView(frame: CGRectMake(5, 5, 250, sectionHeaderView.frame.height-10))
         speechButtonImageView.image = UIImage(named: "speechBubbleIcon")
         sectionHeaderView.addSubview(speechButtonImageView)
         
-        
         // Setup section header label
         let sectionHeaderLabel = UILabel(frame: CGRectMake(25, 0, 250, sectionHeaderView.frame.height))
-        sectionHeaderLabel.font = UIFont.boldSystemFontOfSize(14)
+        sectionHeaderLabel.font = UIFont.boldSystemFontOfSize(15)
         sectionHeaderLabel.textColor = UIColor.whiteColor()
         sectionHeaderView.addSubview(sectionHeaderLabel)
         
