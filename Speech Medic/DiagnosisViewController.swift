@@ -115,6 +115,7 @@ class DiagnosisViewController: UIViewController, UITableViewDataSource, UITableV
         let diagnosis = diagnosisArray[indexPath.section][indexPath.row] as Diagnosis
         
         cell.nameLabel.text = diagnosis.name
+        cell.lesionSiteLabel.text = diagnosis.possibleLesionSite
         
         if indexPath.section == 0 {
             cell.percentageLabel.hidden = false
