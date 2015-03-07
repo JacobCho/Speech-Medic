@@ -12,6 +12,8 @@ class DiagnosisViewController: UIViewController, UITableViewDataSource, UITableV
 
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var navigationBar: UINavigationBar!
+
+    
     
     var oralExamArray : [Symptom] = [] // 7
     var voiceQualityArray : [Symptom] = [] // 4
@@ -116,6 +118,7 @@ class DiagnosisViewController: UIViewController, UITableViewDataSource, UITableV
         
         if indexPath.section == 0 {
             cell.percentageLabel.hidden = false
+            cell.circleView.hidden = false
         
             if let certainty = diagnosis.certainty {
                 if certainty >= self.getMaxCertainty() {
@@ -127,6 +130,7 @@ class DiagnosisViewController: UIViewController, UITableViewDataSource, UITableV
             } else {
                 cell.consistentImageView.image = UIImage(named: "unconsistentIcon")
                 cell.percentageLabel.hidden = true
+                cell.circleView.hidden = true
             }
         } else {
             
@@ -138,6 +142,7 @@ class DiagnosisViewController: UIViewController, UITableViewDataSource, UITableV
 
             }
             cell.percentageLabel.hidden = true
+            cell.circleView.hidden = true
         }
         
         return cell

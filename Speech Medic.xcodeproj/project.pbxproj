@@ -17,6 +17,7 @@
 		527D9F2F1A9FA9F500435FB9 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 527D9F2E1A9FA9F500435FB9 /* Images.xcassets */; };
 		527D9F321A9FA9F500435FB9 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 527D9F301A9FA9F500435FB9 /* LaunchScreen.xib */; };
 		527D9F3E1A9FA9F500435FB9 /* Speech_MedicTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 527D9F3D1A9FA9F500435FB9 /* Speech_MedicTests.swift */; };
+		52B634491AAA6AE40041CAFB /* CircleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52B634481AAA6AE40041CAFB /* CircleView.swift */; };
 		52D909B11AA03E5D00E0F82D /* SymptomsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52D909B01AA03E5D00E0F82D /* SymptomsViewController.swift */; };
 		52EE335C1AA4E393006CABA4 /* SMNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52EE335B1AA4E393006CABA4 /* SMNavigationController.swift */; };
 /* End PBXBuildFile section */
@@ -46,6 +47,7 @@
 		527D9F371A9FA9F500435FB9 /* Speech MedicTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Speech MedicTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		527D9F3C1A9FA9F500435FB9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		527D9F3D1A9FA9F500435FB9 /* Speech_MedicTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Speech_MedicTests.swift; sourceTree = "<group>"; };
+		52B634481AAA6AE40041CAFB /* CircleView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CircleView.swift; sourceTree = "<group>"; };
 		52D909A41AA0067100E0F82D /* Speech Medic-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Speech Medic-Bridging-Header.h"; sourceTree = "<group>"; };
 		52D909B01AA03E5D00E0F82D /* SymptomsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SymptomsViewController.swift; sourceTree = "<group>"; };
 		52EE335B1AA4E393006CABA4 /* SMNavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SMNavigationController.swift; sourceTree = "<group>"; };
@@ -74,6 +76,7 @@
 			children = (
 				524FC4941AA12AA9004B86D3 /* SymptomTableViewCell.swift */,
 				521DAAA21AA2A65500077176 /* DiagnosisTableViewCell.swift */,
+				52B634481AAA6AE40041CAFB /* CircleView.swift */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -257,6 +260,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				52B634491AAA6AE40041CAFB /* CircleView.swift in Sources */,
 				524FC4971AA13346004B86D3 /* Symptom.swift in Sources */,
 				52D909B11AA03E5D00E0F82D /* SymptomsViewController.swift in Sources */,
 				521DAA9F1AA24BF900077176 /* DiagnosisViewController.swift in Sources */,
