@@ -32,6 +32,7 @@ class SymptomsViewController: UIViewController, UITableViewDataSource {
         self.diagnosisButton.layer.shadowOpacity = 0.2
         self.diagnosisButton.layer.shadowRadius = 0.5
         self.diagnosisButton.layer.shadowOffset = CGSizeMake(1.0, 3.0)
+        
     }
     @IBAction func clearAllButtonPressed(sender: UIBarButtonItem) {
         
@@ -144,7 +145,7 @@ class SymptomsViewController: UIViewController, UITableViewDataSource {
             cell.symptomSwitch.on = false
         }
         
-        cell.symptomSwitch.addTarget(self, action: Selector("switchTriggered:"), forControlEvents: .ValueChanged)
+        cell.symptomSwitch.addTarget(self, action: "switchTriggered:", forControlEvents: .ValueChanged)
         
         return cell
     }
@@ -177,7 +178,5 @@ class SymptomsViewController: UIViewController, UITableViewDataSource {
             diagnosisVC.aphasiaArray = self.aphasiaArray
         }
     }
-    
-    
 
 }

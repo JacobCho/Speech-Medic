@@ -15,7 +15,6 @@ class SymptomTableViewCell: UITableViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-//        symptomSwitch.enabled = false
     }
     
 }
