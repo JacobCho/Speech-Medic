@@ -13,8 +13,6 @@ class DiagnosisViewController: UIViewController, UITableViewDataSource, UITableV
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var navigationBar: UINavigationBar!
 
-    
-    
     var oralExamArray : [Symptom] = [] // 7
     var voiceQualityArray : [Symptom] = [] // 4
     var prosodyArray : [Symptom] = [] // 1
@@ -486,7 +484,7 @@ class DiagnosisViewController: UIViewController, UITableViewDataSource, UITableV
         self.tableView.reloadData()
     }
     
-    func getMaxCertainty() -> Double{
+    func getMaxCertainty() -> Double {
         
         var maxCertainty : Double = 0.0
         

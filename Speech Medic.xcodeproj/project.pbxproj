@@ -18,6 +18,15 @@
 		527D9F321A9FA9F500435FB9 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 527D9F301A9FA9F500435FB9 /* LaunchScreen.xib */; };
 		527D9F3E1A9FA9F500435FB9 /* Speech_MedicTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 527D9F3D1A9FA9F500435FB9 /* Speech_MedicTests.swift */; };
 		52B634491AAA6AE40041CAFB /* CircleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52B634481AAA6AE40041CAFB /* CircleView.swift */; };
+		52B6344B1AAD05370041CAFB /* DiagnosisViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52B6344A1AAD05370041CAFB /* DiagnosisViewControllerTests.swift */; };
+		52B6344C1AAD055E0041CAFB /* DiagnosisViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 521DAA9E1AA24BF900077176 /* DiagnosisViewController.swift */; };
+		52B6344D1AAD0BAE0041CAFB /* Symptom.swift in Sources */ = {isa = PBXBuildFile; fileRef = 524FC4961AA13346004B86D3 /* Symptom.swift */; };
+		52B6344E1AAD0BB20041CAFB /* Diagnosis.swift in Sources */ = {isa = PBXBuildFile; fileRef = 521DAAA01AA2811100077176 /* Diagnosis.swift */; };
+		52B6344F1AAD0C5C0041CAFB /* DiagnosisTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 521DAAA21AA2A65500077176 /* DiagnosisTableViewCell.swift */; };
+		52B634501AAD0C5F0041CAFB /* SymptomTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 524FC4941AA12AA9004B86D3 /* SymptomTableViewCell.swift */; };
+		52B634511AAD0C620041CAFB /* CircleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52B634481AAA6AE40041CAFB /* CircleView.swift */; };
+		52B634521AAD0C6A0041CAFB /* SymptomsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52D909B01AA03E5D00E0F82D /* SymptomsViewController.swift */; };
+		52B634531AAD0C730041CAFB /* SMNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52EE335B1AA4E393006CABA4 /* SMNavigationController.swift */; };
 		52D909B11AA03E5D00E0F82D /* SymptomsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52D909B01AA03E5D00E0F82D /* SymptomsViewController.swift */; };
 		52EE335C1AA4E393006CABA4 /* SMNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52EE335B1AA4E393006CABA4 /* SMNavigationController.swift */; };
 /* End PBXBuildFile section */
@@ -48,6 +57,7 @@
 		527D9F3C1A9FA9F500435FB9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		527D9F3D1A9FA9F500435FB9 /* Speech_MedicTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Speech_MedicTests.swift; sourceTree = "<group>"; };
 		52B634481AAA6AE40041CAFB /* CircleView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CircleView.swift; sourceTree = "<group>"; };
+		52B6344A1AAD05370041CAFB /* DiagnosisViewControllerTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DiagnosisViewControllerTests.swift; sourceTree = "<group>"; };
 		52D909A41AA0067100E0F82D /* Speech Medic-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Speech Medic-Bridging-Header.h"; sourceTree = "<group>"; };
 		52D909B01AA03E5D00E0F82D /* SymptomsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SymptomsViewController.swift; sourceTree = "<group>"; };
 		52EE335B1AA4E393006CABA4 /* SMNavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SMNavigationController.swift; sourceTree = "<group>"; };
@@ -127,6 +137,7 @@
 			isa = PBXGroup;
 			children = (
 				527D9F3D1A9FA9F500435FB9 /* Speech_MedicTests.swift */,
+				52B6344A1AAD05370041CAFB /* DiagnosisViewControllerTests.swift */,
 				527D9F3B1A9FA9F500435FB9 /* Supporting Files */,
 			);
 			path = "Speech MedicTests";
@@ -276,7 +287,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				52B634511AAD0C620041CAFB /* CircleView.swift in Sources */,
+				52B6344B1AAD05370041CAFB /* DiagnosisViewControllerTests.swift in Sources */,
+				52B6344D1AAD0BAE0041CAFB /* Symptom.swift in Sources */,
+				52B6344E1AAD0BB20041CAFB /* Diagnosis.swift in Sources */,
 				527D9F3E1A9FA9F500435FB9 /* Speech_MedicTests.swift in Sources */,
+				52B634531AAD0C730041CAFB /* SMNavigationController.swift in Sources */,
+				52B634521AAD0C6A0041CAFB /* SymptomsViewController.swift in Sources */,
+				52B6344C1AAD055E0041CAFB /* DiagnosisViewController.swift in Sources */,
+				52B634501AAD0C5F0041CAFB /* SymptomTableViewCell.swift in Sources */,
+				52B6344F1AAD0C5C0041CAFB /* DiagnosisTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
