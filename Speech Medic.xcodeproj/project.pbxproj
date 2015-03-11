@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5211F8571AB0C3F000FCA3B5 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5211F8561AB0C3F000FCA3B5 /* LoginViewController.swift */; };
 		521DAA9F1AA24BF900077176 /* DiagnosisViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 521DAA9E1AA24BF900077176 /* DiagnosisViewController.swift */; };
 		521DAAA11AA2811100077176 /* Diagnosis.swift in Sources */ = {isa = PBXBuildFile; fileRef = 521DAAA01AA2811100077176 /* Diagnosis.swift */; };
 		521DAAA31AA2A65500077176 /* DiagnosisTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 521DAAA21AA2A65500077176 /* DiagnosisTableViewCell.swift */; };
@@ -42,6 +43,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		5211F8561AB0C3F000FCA3B5 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		521DAA9E1AA24BF900077176 /* DiagnosisViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DiagnosisViewController.swift; sourceTree = "<group>"; };
 		521DAAA01AA2811100077176 /* Diagnosis.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Diagnosis.swift; sourceTree = "<group>"; };
 		521DAAA21AA2A65500077176 /* DiagnosisTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DiagnosisTableViewCell.swift; sourceTree = "<group>"; };
@@ -81,6 +83,13 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		5211F8331AB0C30B00FCA3B5 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		524FC4931AA12A8E004B86D3 /* Views */ = {
 			isa = PBXGroup;
 			children = (
@@ -97,6 +106,7 @@
 				527D9F211A9FA9F500435FB9 /* Speech Medic */,
 				527D9F3A1A9FA9F500435FB9 /* Speech MedicTests */,
 				527D9F201A9FA9F500435FB9 /* Products */,
+				5211F8331AB0C30B00FCA3B5 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -167,6 +177,7 @@
 				521DAA9E1AA24BF900077176 /* DiagnosisViewController.swift */,
 				52D909B01AA03E5D00E0F82D /* SymptomsViewController.swift */,
 				52EE335B1AA4E393006CABA4 /* SMNavigationController.swift */,
+				5211F8561AB0C3F000FCA3B5 /* LoginViewController.swift */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -279,6 +290,7 @@
 				521DAAA11AA2811100077176 /* Diagnosis.swift in Sources */,
 				521DAAA31AA2A65500077176 /* DiagnosisTableViewCell.swift in Sources */,
 				524FC4951AA12AA9004B86D3 /* SymptomTableViewCell.swift in Sources */,
+				5211F8571AB0C3F000FCA3B5 /* LoginViewController.swift in Sources */,
 				527D9F251A9FA9F500435FB9 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -412,6 +424,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"/Users/test/Documents/Development/parse-library-1.6.3",
+				);
 				INFOPLIST_FILE = "Speech Medic/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -425,6 +441,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"/Users/test/Documents/Development/parse-library-1.6.3",
+				);
 				INFOPLIST_FILE = "Speech Medic/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";

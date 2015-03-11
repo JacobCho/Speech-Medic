@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6254" systemVersion="14C109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="Lze-r7-ddK">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6751" systemVersion="14C109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="jYX-wU-WFD">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6736"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
@@ -252,8 +252,8 @@
                                                     <nil key="highlightedColor"/>
                                                     <variation key="default">
                                                         <mask key="constraints">
-                                                            <exclude reference="lXW-Du-lTN"/>
                                                             <exclude reference="KoB-DU-Clt"/>
+                                                            <exclude reference="lXW-Du-lTN"/>
                                                         </mask>
                                                     </variation>
                                                 </label>
@@ -335,10 +335,90 @@
             </objects>
             <point key="canvasLocation" x="3622" y="337"/>
         </scene>
+        <!--Login View Controller-->
+        <scene sceneID="HwM-Gh-1Dv">
+            <objects>
+                <viewController id="jYX-wU-WFD" customClass="LoginViewController" customModule="Speech_Medic" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="UoP-5X-Atv"/>
+                        <viewControllerLayoutGuide type="bottom" id="uca-Ev-ZFE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="t86-CW-a8E">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="5Fe-XO-omc">
+                                <rect key="frame" x="200" y="285" width="200" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="200" id="oZp-u2-t2W"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" enablesReturnKeyAutomatically="YES" secureTextEntry="YES"/>
+                                <connections>
+                                    <outlet property="delegate" destination="jYX-wU-WFD" id="vSR-o6-5rP"/>
+                                </connections>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Username" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="sH9-5g-zJ9">
+                                <rect key="frame" x="200" y="232" width="200" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="200" id="j2q-uj-THt"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" enablesReturnKeyAutomatically="YES"/>
+                                <connections>
+                                    <outlet property="delegate" destination="jYX-wU-WFD" id="Cvg-7l-umK"/>
+                                </connections>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mjz-DQ-Vqw">
+                                <rect key="frame" x="343" y="352" width="57" height="30"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="57" id="fh2-hE-7u4"/>
+                                </constraints>
+                                <state key="normal" title="Login">
+                                    <color key="titleColor" red="0.7725490196" green="0.88235294119999996" blue="0.64705882349999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="loginButtonPressed:" destination="jYX-wU-WFD" eventType="touchUpInside" id="UAm-t9-fgw"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Speech Medic" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KlN-L0-FQx">
+                                <rect key="frame" x="184" y="97" width="232" height="59"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="59" id="X7q-BE-qPn"/>
+                                    <constraint firstAttribute="width" constant="232" id="z0W-Lc-Z4k"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="KohinoorDevanagari-Book" family="Kohinoor Devanagari" pointSize="36"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" red="0.7725490196" green="0.88235294119999996" blue="0.64705882349999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="5Fe-XO-omc" firstAttribute="top" secondItem="sH9-5g-zJ9" secondAttribute="bottom" constant="23" id="24j-aN-NbE"/>
+                            <constraint firstAttribute="centerX" secondItem="KlN-L0-FQx" secondAttribute="centerX" id="6ZU-Gv-uGp"/>
+                            <constraint firstItem="mjz-DQ-Vqw" firstAttribute="top" secondItem="5Fe-XO-omc" secondAttribute="bottom" constant="37" id="itN-lq-DK6"/>
+                            <constraint firstItem="mjz-DQ-Vqw" firstAttribute="trailing" secondItem="5Fe-XO-omc" secondAttribute="trailing" id="jQ0-9b-vF1"/>
+                            <constraint firstAttribute="centerY" secondItem="5Fe-XO-omc" secondAttribute="centerY" id="m5g-k7-HGf"/>
+                            <constraint firstItem="sH9-5g-zJ9" firstAttribute="top" secondItem="KlN-L0-FQx" secondAttribute="bottom" constant="76" id="nXK-bb-Y6d"/>
+                            <constraint firstAttribute="centerX" secondItem="5Fe-XO-omc" secondAttribute="centerX" id="neE-0y-gCI"/>
+                            <constraint firstAttribute="centerX" secondItem="sH9-5g-zJ9" secondAttribute="centerX" id="vgc-lb-qHE"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="passwordTextField" destination="5Fe-XO-omc" id="pfd-4H-eAL"/>
+                        <outlet property="usernameTextField" destination="sH9-5g-zJ9" id="c8n-ro-OEp"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="QxN-Mn-MW6" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1370" y="337"/>
+        </scene>
         <!--Navigation Controller-->
         <scene sceneID="dlC-3S-Bd9">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Lze-r7-ddK" customClass="SMNavigationController" customModule="Speech_Medic" customModuleProvider="target" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="SMNavController" automaticallyAdjustsScrollViewInsets="NO" id="Lze-r7-ddK" customClass="SMNavigationController" customModule="Speech_Medic" customModuleProvider="target" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="Cco-pc-0r0">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
