@@ -15,7 +15,6 @@ class SymptomsViewController: UIViewController, UITableViewDataSource {
     
     let oralExamArray : [Symptom] = Symptom.setupOralExamArray()
     let voiceQualityArray : [Symptom] = Symptom.setupVoiceQualityArray()
-    let prosodyArray : [Symptom] = Symptom.setupProsodyArray()
     let articulationArray : [Symptom] = Symptom.setupArticulationArray()
     let AMRArray : [Symptom] = Symptom.setupAMRArray()
     let SMRArray : [Symptom] = Symptom.setupSMRArray()
@@ -25,7 +24,7 @@ class SymptomsViewController: UIViewController, UITableViewDataSource {
     override func viewDidLoad() {
         super.viewDidLoad()
      
-        self.sectionsArray = [self.oralExamArray, self.voiceQualityArray, self.prosodyArray, self.articulationArray, self.AMRArray, self.SMRArray, self.aphasiaArray]
+        self.sectionsArray = [self.oralExamArray, self.voiceQualityArray, self.articulationArray, self.AMRArray, self.SMRArray, self.aphasiaArray]
         
         self.tableView.contentInset = UIEdgeInsetsMake(0, 0, 90, 0)
         self.diagnosisButton.layer.masksToBounds = false
@@ -43,12 +42,6 @@ class SymptomsViewController: UIViewController, UITableViewDataSource {
         }
         
         for symptom in voiceQualityArray {
-            if symptom.isSymptom == true {
-                symptom.isSymptom = false
-            }
-        }
-        
-        for symptom in prosodyArray {
             if symptom.isSymptom == true {
                 symptom.isSymptom = false
             }
@@ -109,16 +102,14 @@ class SymptomsViewController: UIViewController, UITableViewDataSource {
             case 0:
                 sectionHeaderLabel.text = "Oral Exams"
             case 1:
-                sectionHeaderLabel.text = "Voice Quality Exams"
+                sectionHeaderLabel.text = "Voice Exams"
             case 2:
-                sectionHeaderLabel.text = "Prosody Exams"
-            case 3:
                 sectionHeaderLabel.text = "Articulation Exams"
-            case 4:
+            case 3:
                 sectionHeaderLabel.text = "Alternate Motion Rates Exams"
-            case 5:
+            case 4:
                 sectionHeaderLabel.text = "Sequential Motor Rates Exams"
-            case 6:
+            case 5:
                 sectionHeaderLabel.text = "Aphasia Exams"
             default:
                 sectionHeaderLabel.text = ""
@@ -171,7 +162,6 @@ class SymptomsViewController: UIViewController, UITableViewDataSource {
             var diagnosisVC = segue.destinationViewController as DiagnosisViewController
             diagnosisVC.oralExamArray = self.oralExamArray
             diagnosisVC.voiceQualityArray = self.voiceQualityArray
-            diagnosisVC.prosodyArray = self.prosodyArray
             diagnosisVC.articulationArray = self.articulationArray
             diagnosisVC.AMRArray = self.AMRArray
             diagnosisVC.SMRArray = self.SMRArray

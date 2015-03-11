@@ -15,7 +15,7 @@ class DiagnosisViewController: UIViewController, UITableViewDataSource, UITableV
 
     var oralExamArray : [Symptom] = [] // 7
     var voiceQualityArray : [Symptom] = [] // 4
-    var prosodyArray : [Symptom] = [] // 1
+//    var prosodyArray : [Symptom] = [] // 1
     var articulationArray : [Symptom] = [] // 5
     var AMRArray : [Symptom] = [] // 3
     var SMRArray : [Symptom] = [] // 1
@@ -268,7 +268,7 @@ class DiagnosisViewController: UIViewController, UITableViewDataSource, UITableV
             counter++
         }
         
-        if self.prosodyArray[0].isSymptom {
+        if self.voiceQualityArray[4].isSymptom {
             counter++
         }
         

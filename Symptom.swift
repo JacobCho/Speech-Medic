@@ -40,20 +40,12 @@ class Symptom: NSObject {
         let voicePitchSymptom = Symptom(name: "Harsh, low pitch voice")
         let hypernasalSymptom = Symptom(name: "Hypernasal, audible nasal emission")
         let monopitchSymptom = Symptom(name: "Monopitch, monoloudness")
+        let shortRushesOfSpeechSymptom = Symptom(name: "Short rushes of speech")
         
-        let voiceQualityArray = [breathinessSymptom, voicePitchSymptom, hypernasalSymptom, monopitchSymptom]
+        let voiceQualityArray = [breathinessSymptom, voicePitchSymptom, hypernasalSymptom, monopitchSymptom, shortRushesOfSpeechSymptom]
         
         return voiceQualityArray
         
-    }
-    
-    class func setupProsodyArray() -> [Symptom] {
-        
-        let shortRushesOfSpeechSymptom = Symptom(name: "Short rushes of speech")
-        
-        let prosodyArray = [shortRushesOfSpeechSymptom]
-        
-        return prosodyArray
     }
     
     class func setupArticulationArray() -> [Symptom] {

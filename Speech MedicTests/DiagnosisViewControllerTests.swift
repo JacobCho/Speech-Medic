@@ -14,7 +14,6 @@ class DiagnosisViewControllerTests: XCTestCase {
     
     let oralExamArray : [Symptom] = Symptom.setupOralExamArray()
     let voiceQualityArray : [Symptom] = Symptom.setupVoiceQualityArray()
-    let prosodyArray : [Symptom] = Symptom.setupProsodyArray()
     let articulationArray : [Symptom] = Symptom.setupArticulationArray()
     let AMRArray : [Symptom] = Symptom.setupAMRArray()
     let SMRArray : [Symptom] = Symptom.setupSMRArray()
@@ -82,12 +81,11 @@ class DiagnosisViewControllerTests: XCTestCase {
         self.oralExamArray[1].isSymptom = false
         self.oralExamArray[5].isSymptom = true
         self.voiceQualityArray[3].isSymptom = true
-        self.prosodyArray[0].isSymptom = true
+        self.voiceQualityArray[4].isSymptom = true
         self.AMRArray[2].isSymptom = true
         
         diagnosisVC.oralExamArray = self.oralExamArray
         diagnosisVC.voiceQualityArray = self.voiceQualityArray
-        diagnosisVC.prosodyArray = self.prosodyArray
         diagnosisVC.AMRArray = self.AMRArray
         
         let expected : Int = 6
