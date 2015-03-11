@@ -15,8 +15,7 @@ class DiagnosisViewControllerTests: XCTestCase {
     let oralExamArray : [Symptom] = Symptom.setupOralExamArray()
     let voiceQualityArray : [Symptom] = Symptom.setupVoiceQualityArray()
     let articulationArray : [Symptom] = Symptom.setupArticulationArray()
-    let AMRArray : [Symptom] = Symptom.setupAMRArray()
-    let SMRArray : [Symptom] = Symptom.setupSMRArray()
+    let diadoArray : [Symptom] = Symptom.setupDiadoArray()
     let aphasiaArray : [Symptom] = Symptom.setupAphasiaArray()
     
     
@@ -47,11 +46,11 @@ class DiagnosisViewControllerTests: XCTestCase {
         self.oralExamArray[4].isSymptom = true
         self.voiceQualityArray[1].isSymptom = true
         self.voiceQualityArray[3].isSymptom = true
-        self.AMRArray[0].isSymptom = true
+        self.diadoArray[0].isSymptom = true
         
         diagnosisVC.oralExamArray = self.oralExamArray
         diagnosisVC.voiceQualityArray = self.voiceQualityArray
-        diagnosisVC.AMRArray = self.AMRArray
+        diagnosisVC.diadoArray = self.diadoArray
         
         let expected : Int = 6
         
@@ -63,10 +62,10 @@ class DiagnosisViewControllerTests: XCTestCase {
         let diagnosisVC = DiagnosisViewController()
         
         self.articulationArray[2].isSymptom = true
-        self.AMRArray[1].isSymptom = true
+        self.diadoArray[1].isSymptom = true
         
         diagnosisVC.articulationArray = self.articulationArray
-        diagnosisVC.AMRArray = self.AMRArray
+        diagnosisVC.diadoArray = self.diadoArray
         
         let expected : Int = 3
         
@@ -82,11 +81,11 @@ class DiagnosisViewControllerTests: XCTestCase {
         self.oralExamArray[5].isSymptom = true
         self.voiceQualityArray[3].isSymptom = true
         self.voiceQualityArray[4].isSymptom = true
-        self.AMRArray[2].isSymptom = true
+        self.diadoArray[2].isSymptom = true
         
         diagnosisVC.oralExamArray = self.oralExamArray
         diagnosisVC.voiceQualityArray = self.voiceQualityArray
-        diagnosisVC.AMRArray = self.AMRArray
+        diagnosisVC.diadoArray = self.diadoArray
         
         let expected : Int = 6
         
@@ -106,7 +105,7 @@ class DiagnosisViewControllerTests: XCTestCase {
         diagnosisVC.oralExamArray = self.oralExamArray
         diagnosisVC.voiceQualityArray = self.voiceQualityArray
         diagnosisVC.articulationArray = self.articulationArray
-        diagnosisVC.AMRArray = self.AMRArray
+        diagnosisVC.diadoArray = self.diadoArray
         
         let expected : Int = 5
         
@@ -125,13 +124,13 @@ class DiagnosisViewControllerTests: XCTestCase {
         self.voiceQualityArray[0].isSymptom = true
         self.voiceQualityArray[1].isSymptom = true
         self.articulationArray[2].isSymptom = true
-        self.AMRArray[0].isSymptom = true
-        self.AMRArray[1].isSymptom = true
+        self.diadoArray[0].isSymptom = true
+        self.diadoArray[1].isSymptom = true
         
         diagnosisVC.oralExamArray = self.oralExamArray
         diagnosisVC.voiceQualityArray = self.voiceQualityArray
         diagnosisVC.articulationArray = self.articulationArray
-        diagnosisVC.AMRArray = self.AMRArray
+        diagnosisVC.diadoArray = self.diadoArray
         
         let expected : Int = 9
         
@@ -145,11 +144,11 @@ class DiagnosisViewControllerTests: XCTestCase {
         
         self.voiceQualityArray[3].isSymptom = true
         self.articulationArray[3].isSymptom = true
-        self.SMRArray[0].isSymptom = true
+        self.diadoArray[3].isSymptom = true
         
         diagnosisVC.voiceQualityArray = self.voiceQualityArray
         diagnosisVC.articulationArray = self.articulationArray
-        diagnosisVC.SMRArray = self.SMRArray
+        diagnosisVC.diadoArray = self.diadoArray
         
         let expected : Int = 4
         
@@ -166,12 +165,12 @@ class DiagnosisViewControllerTests: XCTestCase {
         self.voiceQualityArray[1].isSymptom = true
         self.voiceQualityArray[3].isSymptom = true
         self.articulationArray[0].isSymptom = true
-        self.AMRArray[0].isSymptom = true
+        self.diadoArray[0].isSymptom = true
         
         diagnosisVC.oralExamArray = self.oralExamArray
         diagnosisVC.voiceQualityArray = self.voiceQualityArray
         diagnosisVC.articulationArray = self.articulationArray
-        diagnosisVC.AMRArray = self.AMRArray
+        diagnosisVC.diadoArray = self.diadoArray
         
         let expected : Int = 8
         
@@ -184,11 +183,11 @@ class DiagnosisViewControllerTests: XCTestCase {
         
         self.oralExamArray[2].isSymptom = true
         self.voiceQualityArray[1].isSymptom = true
-        self.AMRArray[0].isSymptom = true
+        self.diadoArray[0].isSymptom = true
         
         diagnosisVC.oralExamArray = self.oralExamArray
         diagnosisVC.voiceQualityArray = self.voiceQualityArray
-        diagnosisVC.AMRArray = self.AMRArray
+        diagnosisVC.diadoArray = self.diadoArray
         
         let expected : Int = 4
         

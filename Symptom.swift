@@ -61,24 +61,16 @@ class Symptom: NSObject {
         return articulationArray
     }
     
-    class func setupAMRArray() -> [Symptom] {
+    class func setupDiadoArray() -> [Symptom] {
         
         let slowSymptom = Symptom(name: "AMR slow and regular, errors are slow and regular (spastic)")
         let irregularSymptom = Symptom(name: "AMR irregular, irregular articulatory breakdowns (ataxic/hyper)")
         let rapidSymptom = Symptom(name: "AMR rapid and blurred (hypokinetic)")
-        
-        let AMRArray = [slowSymptom, irregularSymptom, rapidSymptom]
-        
-        return AMRArray
-    }
-    
-    class func setupSMRArray() -> [Symptom] {
-        
         let smrSymptom = Symptom(name: "SMRs poorly sequenced, non-speech oral apraxia")
         
-        let SMRArray = [smrSymptom]
+        let diadoArray = [slowSymptom, irregularSymptom, rapidSymptom, smrSymptom]
         
-        return SMRArray
+        return diadoArray
     }
     
     class func setupAphasiaArray() -> [Symptom] {

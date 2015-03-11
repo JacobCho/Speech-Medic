@@ -14,11 +14,9 @@ class DiagnosisViewController: UIViewController, UITableViewDataSource, UITableV
     @IBOutlet weak var navigationBar: UINavigationBar!
 
     var oralExamArray : [Symptom] = [] // 7
-    var voiceQualityArray : [Symptom] = [] // 4
-//    var prosodyArray : [Symptom] = [] // 1
+    var voiceQualityArray : [Symptom] = [] // 5
     var articulationArray : [Symptom] = [] // 5
-    var AMRArray : [Symptom] = [] // 3
-    var SMRArray : [Symptom] = [] // 1
+    var diadoArray : [Symptom] = [] // 4
     var aphasiaArray : [Symptom] = [] // 3
     var totalSymptoms : Int = 0
     
@@ -223,9 +221,8 @@ class DiagnosisViewController: UIViewController, UITableViewDataSource, UITableV
         if self.voiceQualityArray[3].isSymptom {
             counter++
         }
-    
         
-        if self.AMRArray[0].isSymptom {
+        if self.diadoArray[0].isSymptom {
             counter++
         }
         
@@ -241,7 +238,7 @@ class DiagnosisViewController: UIViewController, UITableViewDataSource, UITableV
             counter++
         }
         
-        if self.AMRArray[1].isSymptom {
+        if self.diadoArray[1].isSymptom {
             counter++
         }
         
@@ -272,7 +269,7 @@ class DiagnosisViewController: UIViewController, UITableViewDataSource, UITableV
             counter++
         }
         
-        if self.AMRArray[2].isSymptom {
+        if self.diadoArray[2].isSymptom {
             counter++
         }
         
@@ -303,7 +300,7 @@ class DiagnosisViewController: UIViewController, UITableViewDataSource, UITableV
             counter++
         }
         
-        if self.AMRArray[1].isSymptom {
+        if self.diadoArray[1].isSymptom {
             counter++
         }
         
@@ -347,11 +344,11 @@ class DiagnosisViewController: UIViewController, UITableViewDataSource, UITableV
             counter++
         }
         
-        if self.AMRArray[0].isSymptom {
+        if self.diadoArray[0].isSymptom {
             counter++
         }
         
-        if self.AMRArray[1].isSymptom {
+        if self.diadoArray[1].isSymptom {
             counter++
         }
         
@@ -378,7 +375,7 @@ class DiagnosisViewController: UIViewController, UITableViewDataSource, UITableV
             counter++
         }
         
-        if self.SMRArray[0].isSymptom {
+        if self.diadoArray[3].isSymptom {
             counter++
         }
         
@@ -419,7 +416,7 @@ class DiagnosisViewController: UIViewController, UITableViewDataSource, UITableV
             counter++
         }
         
-        if self.AMRArray[0].isSymptom {
+        if self.diadoArray[0].isSymptom {
             counter++
         }
         
@@ -446,7 +443,7 @@ class DiagnosisViewController: UIViewController, UITableViewDataSource, UITableV
             counter++
         }
         
-        if self.AMRArray[0].isSymptom {
+        if self.diadoArray[0].isSymptom {
             counter++
         }
         
