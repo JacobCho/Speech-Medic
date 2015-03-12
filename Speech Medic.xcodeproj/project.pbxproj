@@ -8,6 +8,11 @@
 
 /* Begin PBXBuildFile section */
 		5211F8571AB0C3F000FCA3B5 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5211F8561AB0C3F000FCA3B5 /* LoginViewController.swift */; };
+		5211F8591AB1034000FCA3B5 /* SymptomsButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5211F8581AB1034000FCA3B5 /* SymptomsButton.swift */; };
+		5211F85A1AB1047A00FCA3B5 /* SymptomsButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5211F8581AB1034000FCA3B5 /* SymptomsButton.swift */; };
+		5211F85B1AB1048500FCA3B5 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5211F8561AB0C3F000FCA3B5 /* LoginViewController.swift */; };
+		5211F85D1AB10A0800FCA3B5 /* ChoiceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5211F85C1AB10A0800FCA3B5 /* ChoiceViewController.swift */; };
+		5211F85E1AB11DEA00FCA3B5 /* ChoiceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5211F85C1AB10A0800FCA3B5 /* ChoiceViewController.swift */; };
 		521DAA9F1AA24BF900077176 /* DiagnosisViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 521DAA9E1AA24BF900077176 /* DiagnosisViewController.swift */; };
 		521DAAA11AA2811100077176 /* Diagnosis.swift in Sources */ = {isa = PBXBuildFile; fileRef = 521DAAA01AA2811100077176 /* Diagnosis.swift */; };
 		521DAAA31AA2A65500077176 /* DiagnosisTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 521DAAA21AA2A65500077176 /* DiagnosisTableViewCell.swift */; };
@@ -44,6 +49,8 @@
 
 /* Begin PBXFileReference section */
 		5211F8561AB0C3F000FCA3B5 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		5211F8581AB1034000FCA3B5 /* SymptomsButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SymptomsButton.swift; sourceTree = "<group>"; };
+		5211F85C1AB10A0800FCA3B5 /* ChoiceViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChoiceViewController.swift; sourceTree = "<group>"; };
 		521DAA9E1AA24BF900077176 /* DiagnosisViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DiagnosisViewController.swift; sourceTree = "<group>"; };
 		521DAAA01AA2811100077176 /* Diagnosis.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Diagnosis.swift; sourceTree = "<group>"; };
 		521DAAA21AA2A65500077176 /* DiagnosisTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DiagnosisTableViewCell.swift; sourceTree = "<group>"; };
@@ -96,6 +103,7 @@
 				524FC4941AA12AA9004B86D3 /* SymptomTableViewCell.swift */,
 				521DAAA21AA2A65500077176 /* DiagnosisTableViewCell.swift */,
 				52B634481AAA6AE40041CAFB /* CircleView.swift */,
+				5211F8581AB1034000FCA3B5 /* SymptomsButton.swift */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -174,6 +182,7 @@
 		52D909B21AA03E6A00E0F82D /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				5211F85C1AB10A0800FCA3B5 /* ChoiceViewController.swift */,
 				521DAA9E1AA24BF900077176 /* DiagnosisViewController.swift */,
 				52D909B01AA03E5D00E0F82D /* SymptomsViewController.swift */,
 				52EE335B1AA4E393006CABA4 /* SMNavigationController.swift */,
@@ -285,7 +294,9 @@
 				52B634491AAA6AE40041CAFB /* CircleView.swift in Sources */,
 				524FC4971AA13346004B86D3 /* Symptom.swift in Sources */,
 				52D909B11AA03E5D00E0F82D /* SymptomsViewController.swift in Sources */,
+				5211F85D1AB10A0800FCA3B5 /* ChoiceViewController.swift in Sources */,
 				521DAA9F1AA24BF900077176 /* DiagnosisViewController.swift in Sources */,
+				5211F8591AB1034000FCA3B5 /* SymptomsButton.swift in Sources */,
 				52EE335C1AA4E393006CABA4 /* SMNavigationController.swift in Sources */,
 				521DAAA11AA2811100077176 /* Diagnosis.swift in Sources */,
 				521DAAA31AA2A65500077176 /* DiagnosisTableViewCell.swift in Sources */,
@@ -299,11 +310,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5211F85B1AB1048500FCA3B5 /* LoginViewController.swift in Sources */,
 				52B634511AAD0C620041CAFB /* CircleView.swift in Sources */,
 				52B6344B1AAD05370041CAFB /* DiagnosisViewControllerTests.swift in Sources */,
 				52B6344D1AAD0BAE0041CAFB /* Symptom.swift in Sources */,
 				52B6344E1AAD0BB20041CAFB /* Diagnosis.swift in Sources */,
+				5211F85A1AB1047A00FCA3B5 /* SymptomsButton.swift in Sources */,
 				527D9F3E1A9FA9F500435FB9 /* Speech_MedicTests.swift in Sources */,
+				5211F85E1AB11DEA00FCA3B5 /* ChoiceViewController.swift in Sources */,
 				52B634531AAD0C730041CAFB /* SMNavigationController.swift in Sources */,
 				52B634521AAD0C6A0041CAFB /* SymptomsViewController.swift in Sources */,
 				52B6344C1AAD055E0041CAFB /* DiagnosisViewController.swift in Sources */,

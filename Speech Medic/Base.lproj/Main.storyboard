@@ -6,6 +6,107 @@
     </dependencies>
     <scenes>
         <!--Speech Medic-->
+        <scene sceneID="uJt-JS-caI">
+            <objects>
+                <viewController id="MBC-9P-Eue" customClass="ChoiceViewController" customModule="Speech_Medic" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="ili-tM-oc4"/>
+                        <viewControllerLayoutGuide type="bottom" id="VF6-sP-PzT"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8Y1-SJ-gXE">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Nii-Td-fJA">
+                                <rect key="frame" x="150" y="250" width="300" height="100"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aWR-XD-giC" customClass="SymptomsButton" customModule="Speech_Medic" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="100" height="100"/>
+                                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="100" id="Ko0-gV-etF"/>
+                                            <constraint firstAttribute="height" constant="100" id="X0V-Ru-ON2"/>
+                                        </constraints>
+                                        <state key="normal" title="Motor Speech">
+                                            <color key="titleColor" red="0.7725490196" green="0.88235294119999996" blue="0.64705882349999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                <real key="value" value="50"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="motorSpeechButtonPressed:" destination="MBC-9P-Eue" eventType="touchUpInside" id="bKc-gy-DFT"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Cra-f2-gvi" customClass="SymptomsButton" customModule="Speech_Medic" customModuleProvider="target">
+                                        <rect key="frame" x="200" y="0.0" width="100" height="100"/>
+                                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="100" id="Lxc-AV-q2f"/>
+                                            <constraint firstAttribute="width" constant="100" id="eYJ-d3-t2K"/>
+                                        </constraints>
+                                        <state key="normal" title="Aphasia">
+                                            <color key="titleColor" red="0.7725490196" green="0.88235294119999996" blue="0.64705882349999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                <real key="value" value="50"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="aphasiaButtonPressed:" destination="MBC-9P-Eue" eventType="touchUpInside" id="206-EU-yWu"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" red="0.7725490196" green="0.88235294119999996" blue="0.64705882349999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstItem="Cra-f2-gvi" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="aWR-XD-giC" secondAttribute="trailing" constant="50" id="1ai-5Y-ELn"/>
+                                    <constraint firstAttribute="centerY" secondItem="aWR-XD-giC" secondAttribute="centerY" id="3DL-Dk-A6I"/>
+                                    <constraint firstAttribute="height" constant="100" id="E9q-YH-oAL"/>
+                                    <constraint firstAttribute="trailing" secondItem="Cra-f2-gvi" secondAttribute="trailing" id="Udn-RK-dk0"/>
+                                    <constraint firstItem="aWR-XD-giC" firstAttribute="leading" secondItem="Nii-Td-fJA" secondAttribute="leading" id="anv-oq-Oql"/>
+                                    <constraint firstAttribute="centerY" secondItem="Cra-f2-gvi" secondAttribute="centerY" id="elB-Np-xpr"/>
+                                    <constraint firstAttribute="width" relation="lessThanOrEqual" constant="300" id="ndf-f0-C9l"/>
+                                </constraints>
+                            </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="What do you need a diagnosis for?" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="16" translatesAutoresizingMaskIntoConstraints="NO" id="VT5-xM-ogE">
+                                <rect key="frame" x="144" y="190" width="313" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="21" id="Ynx-MP-p8S"/>
+                                    <constraint firstAttribute="width" constant="313" id="lDb-nV-n6k"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" red="0.7725490196" green="0.88235294119999996" blue="0.64705882349999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="Nii-Td-fJA" firstAttribute="top" secondItem="VT5-xM-ogE" secondAttribute="bottom" constant="39" id="C2Z-vG-KmM"/>
+                            <constraint firstAttribute="trailingMargin" relation="greaterThanOrEqual" secondItem="VT5-xM-ogE" secondAttribute="trailing" constant="8" id="EZg-Ff-wO3"/>
+                            <constraint firstAttribute="trailingMargin" relation="greaterThanOrEqual" secondItem="Nii-Td-fJA" secondAttribute="trailing" constant="8" id="Hqg-cM-3wo"/>
+                            <constraint firstAttribute="centerX" secondItem="VT5-xM-ogE" secondAttribute="centerX" id="Lyj-Qb-i57"/>
+                            <constraint firstItem="Nii-Td-fJA" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="8Y1-SJ-gXE" secondAttribute="leadingMargin" constant="8" id="PLv-Pb-mjJ"/>
+                            <constraint firstItem="VT5-xM-ogE" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="8Y1-SJ-gXE" secondAttribute="leadingMargin" constant="8" id="aHE-Ph-R8u"/>
+                            <constraint firstAttribute="centerY" secondItem="Nii-Td-fJA" secondAttribute="centerY" id="kMh-Ly-Nfx"/>
+                            <constraint firstAttribute="centerX" secondItem="Nii-Td-fJA" secondAttribute="centerX" id="v9S-Xg-GZb"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Speech Medic" id="cKt-4r-jIO">
+                        <barButtonItem key="backBarButtonItem" title="Back" id="xoE-oM-X7n"/>
+                    </navigationItem>
+                    <connections>
+                        <segue destination="Owj-TE-SRg" kind="show" identifier="SymptomsSegue" id="iK4-WT-Gs8"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Osv-fO-jX6" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2790" y="337"/>
+        </scene>
+        <!--Symptoms View Controller-->
         <scene sceneID="PrC-8s-tOI">
             <objects>
                 <viewController id="Owj-TE-SRg" customClass="SymptomsViewController" customModule="Speech_Medic" customModuleProvider="target" sceneMemberID="viewController">
@@ -17,7 +118,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" allowsSelection="NO" rowHeight="68" sectionHeaderHeight="40" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="kxo-7c-dSM">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" allowsSelection="NO" rowHeight="68" sectionHeaderHeight="40" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="kxo-7c-dSM">
                                 <rect key="frame" x="0.0" y="64" width="600" height="536"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
@@ -81,6 +182,7 @@
                                     <userDefinedRuntimeAttribute type="boolean" keyPath="clipsToBounds" value="YES"/>
                                 </userDefinedRuntimeAttributes>
                                 <connections>
+                                    <action selector="diagnoseButtonPressed:" destination="Owj-TE-SRg" eventType="touchUpInside" id="AQO-D1-NKE"/>
                                     <segue destination="hsP-SF-NGf" kind="presentation" identifier="DiagnosisSegue" id="rp9-FG-jJ6"/>
                                 </connections>
                             </button>
@@ -112,7 +214,8 @@
                             </mask>
                         </variation>
                     </view>
-                    <navigationItem key="navigationItem" title="Speech Medic" id="0m1-9u-D3S">
+                    <navigationItem key="navigationItem" id="0m1-9u-D3S">
+                        <barButtonItem key="backBarButtonItem" title="Back" id="xmi-D0-nL2"/>
                         <barButtonItem key="rightBarButtonItem" title="Reset" id="YYM-bq-jDc">
                             <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                             <connections>
@@ -127,7 +230,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="VMK-Ob-fOT" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2870" y="337"/>
+            <point key="canvasLocation" x="3529" y="337"/>
         </scene>
         <!--Diagnosis View Controller-->
         <scene sceneID="lPD-aJ-GLL">
@@ -170,7 +273,7 @@
                                     <constraint firstAttribute="trailing" secondItem="2Kc-fe-rBS" secondAttribute="trailing" id="hUg-0b-CBz"/>
                                 </constraints>
                             </view>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" allowsSelection="NO" rowHeight="71" sectionHeaderHeight="40" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="qom-Ph-XG0">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" allowsSelection="NO" rowHeight="71" sectionHeaderHeight="40" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="qom-Ph-XG0">
                                 <rect key="frame" x="0.0" y="64" width="600" height="536"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
@@ -203,7 +306,7 @@
                                                         <constraint firstAttribute="width" constant="25" id="ldo-SI-WiK"/>
                                                     </constraints>
                                                 </imageView>
-                                                <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="UUK-sm-6EA" customClass="CircleView" customModule="Speech_Medic" customModuleProvider="target">
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="UUK-sm-6EA" customClass="CircleView" customModule="Speech_Medic" customModuleProvider="target">
                                                     <rect key="frame" x="527" y="9" width="55" height="55"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="00" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MJx-bF-lNa">
@@ -333,7 +436,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="VgP-mZ-Rmx" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3622" y="337"/>
+            <point key="canvasLocation" x="4328" y="337"/>
         </scene>
         <!--Login View Controller-->
         <scene sceneID="HwM-Gh-1Dv">
@@ -383,7 +486,17 @@
                                     <action selector="loginButtonPressed:" destination="jYX-wU-WFD" eventType="touchUpInside" id="UAm-t9-fgw"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Speech Medic" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KlN-L0-FQx">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Thanks to J Donovan whose spreadsheet inspired this app!" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="9" translatesAutoresizingMaskIntoConstraints="NO" id="ODe-lS-In1">
+                                <rect key="frame" x="135" y="559" width="331" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="21" id="MDK-1m-Az6"/>
+                                    <constraint firstAttribute="width" constant="331" id="PuT-tr-R1Z"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Speech Medic" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KlN-L0-FQx">
                                 <rect key="frame" x="184" y="97" width="232" height="59"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="59" id="X7q-BE-qPn"/>
@@ -398,12 +511,17 @@
                         <constraints>
                             <constraint firstItem="5Fe-XO-omc" firstAttribute="top" secondItem="sH9-5g-zJ9" secondAttribute="bottom" constant="23" id="24j-aN-NbE"/>
                             <constraint firstAttribute="centerX" secondItem="KlN-L0-FQx" secondAttribute="centerX" id="6ZU-Gv-uGp"/>
+                            <constraint firstItem="ODe-lS-In1" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="t86-CW-a8E" secondAttribute="leadingMargin" constant="8" id="CyF-aQ-thF"/>
+                            <constraint firstItem="uca-Ev-ZFE" firstAttribute="top" secondItem="ODe-lS-In1" secondAttribute="bottom" constant="20" id="OWF-Jd-Wcc"/>
+                            <constraint firstItem="KlN-L0-FQx" firstAttribute="top" relation="greaterThanOrEqual" secondItem="UoP-5X-Atv" secondAttribute="bottom" constant="10" id="Pcy-hQ-aer"/>
+                            <constraint firstAttribute="centerX" secondItem="ODe-lS-In1" secondAttribute="centerX" id="cf2-B7-Zn5"/>
                             <constraint firstItem="mjz-DQ-Vqw" firstAttribute="top" secondItem="5Fe-XO-omc" secondAttribute="bottom" constant="37" id="itN-lq-DK6"/>
                             <constraint firstItem="mjz-DQ-Vqw" firstAttribute="trailing" secondItem="5Fe-XO-omc" secondAttribute="trailing" id="jQ0-9b-vF1"/>
                             <constraint firstAttribute="centerY" secondItem="5Fe-XO-omc" secondAttribute="centerY" id="m5g-k7-HGf"/>
-                            <constraint firstItem="sH9-5g-zJ9" firstAttribute="top" secondItem="KlN-L0-FQx" secondAttribute="bottom" constant="76" id="nXK-bb-Y6d"/>
+                            <constraint firstItem="sH9-5g-zJ9" firstAttribute="top" relation="greaterThanOrEqual" secondItem="KlN-L0-FQx" secondAttribute="bottom" constant="20" id="nXK-bb-Y6d"/>
                             <constraint firstAttribute="centerX" secondItem="5Fe-XO-omc" secondAttribute="centerX" id="neE-0y-gCI"/>
                             <constraint firstAttribute="centerX" secondItem="sH9-5g-zJ9" secondAttribute="centerX" id="vgc-lb-qHE"/>
+                            <constraint firstAttribute="trailingMargin" relation="greaterThanOrEqual" secondItem="ODe-lS-In1" secondAttribute="trailing" constant="8" id="wJR-u0-0P3"/>
                         </constraints>
                     </view>
                     <connections>
@@ -418,7 +536,7 @@
         <!--Navigation Controller-->
         <scene sceneID="dlC-3S-Bd9">
             <objects>
-                <navigationController storyboardIdentifier="SMNavController" automaticallyAdjustsScrollViewInsets="NO" id="Lze-r7-ddK" customClass="SMNavigationController" customModule="Speech_Medic" customModuleProvider="target" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="SMNavController" automaticallyAdjustsScrollViewInsets="NO" modalTransitionStyle="flipHorizontal" id="Lze-r7-ddK" customClass="SMNavigationController" customModule="Speech_Medic" customModuleProvider="target" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="Cco-pc-0r0">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -426,7 +544,7 @@
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
-                        <segue destination="Owj-TE-SRg" kind="relationship" relationship="rootViewController" id="ug0-Gl-4xc"/>
+                        <segue destination="MBC-9P-Eue" kind="relationship" relationship="rootViewController" id="uEG-wR-PWt"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8WU-kG-TxO" userLabel="First Responder" sceneMemberID="firstResponder"/>

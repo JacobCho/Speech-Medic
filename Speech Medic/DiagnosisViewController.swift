@@ -12,6 +12,8 @@ class DiagnosisViewController: UIViewController, UITableViewDataSource, UITableV
 
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var navigationBar: UINavigationBar!
+    
+    var aphasiaSetup : Bool = false
 
     var oralExamArray : [Symptom] = [] // 7
     var voiceQualityArray : [Symptom] = [] // 5
@@ -50,10 +52,12 @@ class DiagnosisViewController: UIViewController, UITableViewDataSource, UITableV
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.setupMotorSpeechDiagnosis()
-        self.setupAphasiaDiagnosis()
+        if aphasiaSetup {
+            self.setupAphasiaDiagnosis()
+        } else {
+            self.setupMotorSpeechDiagnosis()
+        }
         
-        self.setupCertainty()
     }
     
     override func viewDidAppear(animated: Bool) {
@@ -88,9 +92,11 @@ class DiagnosisViewController: UIViewController, UITableViewDataSource, UITableV
         
         switch section {
         case 0:
-            sectionHeaderLabel.text = "Motor Speech Diagnosis"
-        case 1:
-            sectionHeaderLabel.text = "Aphasia Diagnosis"
+            if !aphasiaSetup {
+                sectionHeaderLabel.text = "Motor Speech Diagnosis"
+            } else {
+                sectionHeaderLabel.text = "Aphasia Diagnosis"
+            }
         default:
             sectionHeaderLabel.text = ""
             
@@ -113,7 +119,7 @@ class DiagnosisViewController: UIViewController, UITableViewDataSource, UITableV
         cell.nameLabel.text = diagnosis.name
         cell.lesionSiteLabel.text = diagnosis.possibleLesionSite
         
-        if indexPath.section == 0 {
+        if indexPath.section == 0 && !aphasiaSetup {
             cell.percentageLabel.hidden = false
             cell.circleView.hidden = false
         
@@ -150,7 +156,7 @@ class DiagnosisViewController: UIViewController, UITableViewDataSource, UITableV
     func setupMotorSpeechDiagnosis() {
         motorSpeechArray = [self.flaccidDys, self.spasticDys, self.ataxicDys, self.hypoDys, self.hyperDys, self.uniUMNDys, self.apraxSpeech, self.flaccidSpas, self.ataxicDys, self.conAphasia, self.brocha, self.wernickes, self.sensoryAphasia, self.motorAphasia, self.mixedAphasia, self.globalAphasia, self.speechApraxia, self.anomicAphasia]
         
-        self.diagnosisArray = [self.motorSpeechArray]
+        self.setupCertainty()
     }
     
     func setupAphasiaDiagnosis() {
@@ -158,6 +164,7 @@ class DiagnosisViewController: UIViewController, UITableViewDataSource, UITableV
         
         self.getAphasiaDiagnosis()
         self.sortAphasiaArray()
+        self.diagnosisArray.append(self.aphasiaDiagnosisArray)
     }
     
     
@@ -476,7 +483,6 @@ class DiagnosisViewController: UIViewController, UITableViewDataSource, UITableV
 
         self.diagnosisArray.removeAll(keepCapacity: true)
         self.diagnosisArray.append(self.motorSpeechArray)
-        self.diagnosisArray.append(self.aphasiaDiagnosisArray)
         
         self.tableView.reloadData()
     }
