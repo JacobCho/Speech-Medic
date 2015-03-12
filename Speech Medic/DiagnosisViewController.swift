@@ -15,11 +15,11 @@ class DiagnosisViewController: UIViewController, UITableViewDataSource, UITableV
     
     var aphasiaSetup : Bool = false
 
-    var oralExamArray : [Symptom] = [] // 7
-    var voiceQualityArray : [Symptom] = [] // 5
-    var articulationArray : [Symptom] = [] // 5
-    var diadoArray : [Symptom] = [] // 4
-    var aphasiaArray : [Symptom] = [] // 3
+    var oralExamArray : [Symptom]? // 7
+    var voiceQualityArray : [Symptom]? // 5
+    var articulationArray : [Symptom]? // 5
+    var diadoArray : [Symptom]? // 4
+    var aphasiaArray : [Symptom]? // 3
     var totalSymptoms : Int = 0
     
     // Diagnosis'
@@ -172,33 +172,39 @@ class DiagnosisViewController: UIViewController, UITableViewDataSource, UITableV
         
         var counter : Int = 0
         
+        if let oralExam = self.oralExamArray {
+            if let voiceQuality = self.voiceQualityArray {
+                if let articulation = self.articulationArray {
         
-        if self.oralExamArray[0].isSymptom {
-            counter++
-        }
-        
-        if self.oralExamArray[1].isSymptom {
-            counter++
-        }
-        
-        if self.oralExamArray[3].isSymptom {
-            counter++
-        }
-       
-        if self.voiceQualityArray[0].isSymptom {
-            counter++
-        }
-        
-        if self.voiceQualityArray[2].isSymptom {
-            counter++
-        }
-        
-        if self.voiceQualityArray[3].isSymptom {
-            counter++
-        }
-        
-        if self.articulationArray[0].isSymptom {
-            counter++
+                    if oralExam[0].isSymptom {
+                        counter++
+                    }
+                    
+                    if oralExam[1].isSymptom {
+                        counter++
+                    }
+                    
+                    if oralExam[3].isSymptom {
+                        counter++
+                    }
+                   
+                    if voiceQuality[0].isSymptom {
+                        counter++
+                    }
+                    
+                    if voiceQuality[2].isSymptom {
+                        counter++
+                    }
+                    
+                    if voiceQuality[3].isSymptom {
+                        counter++
+                    }
+                    
+                    if articulation[0].isSymptom {
+                        counter++
+                    }
+                }
+            }
         }
         
         
@@ -208,31 +214,36 @@ class DiagnosisViewController: UIViewController, UITableViewDataSource, UITableV
     func sumForSpasticDys() -> Int {
         
         var counter : Int = 0
-        
-        if !self.oralExamArray[1].isSymptom {
-            counter++
+        if let oralExam = self.oralExamArray {
+            if let voiceQuality = self.voiceQualityArray {
+                if let diado = self.diadoArray {
+                
+                    if !oralExam[1].isSymptom {
+                        counter++
+                    }
+                    
+                    if oralExam[2].isSymptom {
+                        counter++
+                    }
+                    
+                    if oralExam[4].isSymptom {
+                        counter++
+                    }
+                    
+                    if voiceQuality[1].isSymptom {
+                        counter++
+                    }
+                    
+                    if voiceQuality[3].isSymptom {
+                        counter++
+                    }
+                    
+                    if diado[0].isSymptom {
+                        counter++
+                    }
+                }
+            }
         }
-        
-        if self.oralExamArray[2].isSymptom {
-            counter++
-        }
-        
-        if self.oralExamArray[4].isSymptom {
-            counter++
-        }
-        
-        if self.voiceQualityArray[1].isSymptom {
-            counter++
-        }
-        
-        if self.voiceQualityArray[3].isSymptom {
-            counter++
-        }
-        
-        if self.diadoArray[0].isSymptom {
-            counter++
-        }
-        
         
         return counter + 1
     }
@@ -240,13 +251,16 @@ class DiagnosisViewController: UIViewController, UITableViewDataSource, UITableV
     func sumForAtaxicDys() -> Int {
         
         var counter : Int = 0
-        
-        if self.articulationArray[2].isSymptom {
-            counter++
-        }
-        
-        if self.diadoArray[1].isSymptom {
-            counter++
+        if let articulation = self.articulationArray {
+            if let diado = self.diadoArray {
+                if articulation[2].isSymptom {
+                    counter++
+                }
+                
+                if diado[1].isSymptom {
+                    counter++
+                }
+            }
         }
         
         return counter + 1
@@ -255,29 +269,34 @@ class DiagnosisViewController: UIViewController, UITableViewDataSource, UITableV
     func sumForHypoDys() -> Int {
         
         var counter : Int = 0
-    
-        if !self.oralExamArray[1].isSymptom {
-            counter++
-        }
-        
-        if self.oralExamArray[5].isSymptom {
-            counter++
-        }
-            
-        if self.voiceQualityArray[0].isSymptom {
-            counter++
-        }
-        
-        if self.voiceQualityArray[3].isSymptom {
-            counter++
-        }
-        
-        if self.voiceQualityArray[4].isSymptom {
-            counter++
-        }
-        
-        if self.diadoArray[2].isSymptom {
-            counter++
+        if let oralExam = self.oralExamArray {
+            if let voiceQuality = self.voiceQualityArray {
+                if let diado = self.diadoArray {
+                    if !oralExam[1].isSymptom {
+                        counter++
+                    }
+                    
+                    if oralExam[5].isSymptom {
+                        counter++
+                    }
+                        
+                    if voiceQuality[0].isSymptom {
+                        counter++
+                    }
+                    
+                    if voiceQuality[3].isSymptom {
+                        counter++
+                    }
+                    
+                    if voiceQuality[4].isSymptom {
+                        counter++
+                    }
+                    
+                    if diado[2].isSymptom {
+                        counter++
+                    }
+                }
+            }
         }
         
         return counter + 1
@@ -286,29 +305,37 @@ class DiagnosisViewController: UIViewController, UITableViewDataSource, UITableV
     func sumForHyperDys() -> Int {
         
         var counter : Int = 0
+        if let oralExam = self.oralExamArray {
+            if let voiceQuality = self.voiceQualityArray {
+                if let articulation = self.articulationArray {
+                    if let diado = self.diadoArray {
         
-        if !self.oralExamArray[1].isSymptom {
-            counter++
-        }
-        
-        if self.oralExamArray[6].isSymptom {
-            counter++
-        }
-        
-        if self.voiceQualityArray[1].isSymptom {
-            counter++
-        }
-        
-        if self.articulationArray[1].isSymptom {
-            counter++
-        }
-        
-        if self.articulationArray[2].isSymptom {
-            counter++
-        }
-        
-        if self.diadoArray[1].isSymptom {
-            counter++
+                        if !oralExam[1].isSymptom {
+                            counter++
+                        }
+                        
+                        if oralExam[6].isSymptom {
+                            counter++
+                        }
+                        
+                        if voiceQuality[1].isSymptom {
+                            counter++
+                        }
+                        
+                        if articulation[1].isSymptom {
+                            counter++
+                        }
+                        
+                        if articulation[2].isSymptom {
+                            counter++
+                        }
+                        
+                        if diado[1].isSymptom {
+                            counter++
+                        }
+                    }
+                }
+            }
         }
         
         return counter + 1
@@ -317,46 +344,54 @@ class DiagnosisViewController: UIViewController, UITableViewDataSource, UITableV
     func sumForUniUMNDys() -> Int {
         var counter : Int = 0
         
-        if self.oralExamArray[0].isSymptom {
-            counter--
-        } else {
-            counter++
-        }
-        
-        if self.oralExamArray[1].isSymptom {
-            counter++
-        }
-        
-        if self.oralExamArray[2].isSymptom {
-            counter++
-        }
-        
-        if self.oralExamArray[3].isSymptom {
-            counter++
-        }
-        
-        if self.oralExamArray[4].isSymptom {
-            counter++
-        }
-        
-        if self.voiceQualityArray[0].isSymptom {
-            counter++
-        }
-        
-        if self.voiceQualityArray[1].isSymptom {
-            counter++
-        }
-        
-        if self.articulationArray[2].isSymptom {
-            counter++
-        }
-        
-        if self.diadoArray[0].isSymptom {
-            counter++
-        }
-        
-        if self.diadoArray[1].isSymptom {
-            counter++
+        if let oralExam = self.oralExamArray {
+            if let voiceQuality = self.voiceQualityArray {
+                if let articulation = self.articulationArray {
+                    if let diado = self.diadoArray {
+                        if oralExam[0].isSymptom {
+                            counter--
+                        } else {
+                            counter++
+                        }
+                        
+                        if oralExam[1].isSymptom {
+                            counter++
+                        }
+                        
+                        if oralExam[2].isSymptom {
+                            counter++
+                        }
+                        
+                        if oralExam[3].isSymptom {
+                            counter++
+                        }
+                        
+                        if oralExam[4].isSymptom {
+                            counter++
+                        }
+                        
+                        if voiceQuality[0].isSymptom {
+                            counter++
+                        }
+                        
+                        if voiceQuality[1].isSymptom {
+                            counter++
+                        }
+                        
+                        if articulation[2].isSymptom {
+                            counter++
+                        }
+                        
+                        if diado[0].isSymptom {
+                            counter++
+                        }
+                        
+                        if diado[1].isSymptom {
+                            counter++
+                        }
+                    }
+                }
+            }
         }
         
         return counter + 1
@@ -365,25 +400,31 @@ class DiagnosisViewController: UIViewController, UITableViewDataSource, UITableV
     func sumForApraxiaSpeech() -> Int {
         
         var counter : Int = 0
+        if let voiceQuality = self.voiceQualityArray {
+            if let articulation = self.articulationArray {
+                if let diado = self.diadoArray {
         
-        if self.voiceQualityArray[3].isSymptom {
-            counter++
-        }
-        
-        if self.articulationArray[2].isSymptom {
-            counter++
-        }
-        
-        if self.articulationArray[3].isSymptom {
-            counter++
-        }
-        
-        if self.articulationArray[4].isSymptom {
-            counter++
-        }
-        
-        if self.diadoArray[3].isSymptom {
-            counter++
+                    if voiceQuality[3].isSymptom {
+                        counter++
+                    }
+                    
+                    if articulation[2].isSymptom {
+                        counter++
+                    }
+                    
+                    if articulation[3].isSymptom {
+                        counter++
+                    }
+                    
+                    if articulation[4].isSymptom {
+                        counter++
+                    }
+                    
+                    if diado[3].isSymptom {
+                        counter++
+                    }
+                }
+            }
         }
         
         return counter + 1
@@ -392,39 +433,47 @@ class DiagnosisViewController: UIViewController, UITableViewDataSource, UITableV
     func sumForFlaccidSpas() -> Int {
         
         var counter : Int = 0
+        if let oralExam = self.oralExamArray {
+            if let voiceQuality = self.voiceQualityArray {
+                if let articulation = self.articulationArray {
+                    if let diado = self.diadoArray {
         
-        if self.oralExamArray[0].isSymptom {
-            counter++
-        }
-        
-        if !self.oralExamArray[1].isSymptom {
-            counter++
-        }
-        
-        if self.oralExamArray[2].isSymptom {
-            counter++
-        }
-        
-        if self.oralExamArray[3].isSymptom {
-            counter++
-        }
-        
-        if self.oralExamArray[4].isSymptom {
-            counter++
-        }
-        
-        for symptom in self.voiceQualityArray {
-            if symptom.isSymptom {
-                counter++
+                        if oralExam[0].isSymptom {
+                            counter++
+                        }
+                        
+                        if !oralExam[1].isSymptom {
+                            counter++
+                        }
+                        
+                        if oralExam[2].isSymptom {
+                            counter++
+                        }
+                        
+                        if oralExam[3].isSymptom {
+                            counter++
+                        }
+                        
+                        if oralExam[4].isSymptom {
+                            counter++
+                        }
+                        
+                        for symptom in voiceQuality {
+                            if symptom.isSymptom {
+                                counter++
+                            }
+                        }
+                        
+                        if articulation[0].isSymptom {
+                            counter++
+                        }
+                        
+                        if diado[0].isSymptom {
+                            counter++
+                        }
+                    }
+                }
             }
-        }
-        
-        if self.articulationArray[0].isSymptom {
-            counter++
-        }
-        
-        if self.diadoArray[0].isSymptom {
-            counter++
         }
         
         return counter + 1
@@ -433,25 +482,31 @@ class DiagnosisViewController: UIViewController, UITableViewDataSource, UITableV
     func sumForAtaxicSpas() -> Int {
         
         var counter : Int = 0
+        if let oralExam = self.oralExamArray {
+            if let voiceQuality = self.voiceQualityArray {
+                if let diado = self.diadoArray {
         
-        if self.oralExamArray[2].isSymptom {
-            counter++
-        }
-        
-        if self.oralExamArray[4].isSymptom {
-            counter++
-        }
-        
-        if self.voiceQualityArray[1].isSymptom {
-            counter++
-        }
-        
-        if self.voiceQualityArray[3].isSymptom {
-            counter++
-        }
-        
-        if self.diadoArray[0].isSymptom {
-            counter++
+                    if oralExam[2].isSymptom {
+                        counter++
+                    }
+                    
+                    if oralExam[4].isSymptom {
+                        counter++
+                    }
+                    
+                    if voiceQuality[1].isSymptom {
+                        counter++
+                    }
+                    
+                    if voiceQuality[3].isSymptom {
+                        counter++
+                    }
+                    
+                    if diado[0].isSymptom {
+                        counter++
+                    }
+                }
+            }
         }
         
         return counter + 1
@@ -504,57 +559,60 @@ class DiagnosisViewController: UIViewController, UITableViewDataSource, UITableV
     
     func getAphasiaDiagnosis() {
         
-        // Conduction Aphasia
-        if self.aphasiaArray[0].isSymptom && self.aphasiaArray[1].isSymptom && !self.aphasiaArray[2].isSymptom {
-            self.aphasiaDiagnosisArray[0].isConsistent == true
-            
-        }
+        if let aphasia = self.aphasiaArray {
         
-        // Broca's Aphasia
-        if !self.aphasiaArray[0].isSymptom && self.aphasiaArray[1].isSymptom && !self.aphasiaArray[2].isSymptom {
-            self.aphasiaDiagnosisArray[1].isConsistent == true
+            // Conduction Aphasia
+            if aphasia[0].isSymptom && aphasia[1].isSymptom && !aphasia[2].isSymptom {
+                self.aphasiaDiagnosisArray[0].isConsistent == true
+                
+            }
             
-        }
-        
-        // Wernicke's Aphasia
-        if self.aphasiaArray[0].isSymptom && !self.aphasiaArray[1].isSymptom && !self.aphasiaArray[2].isSymptom {
-            self.aphasiaDiagnosisArray[2].isConsistent = true
+            // Broca's Aphasia
+            if !aphasia[0].isSymptom && aphasia[1].isSymptom && !aphasia[2].isSymptom {
+                self.aphasiaDiagnosisArray[1].isConsistent == true
+                
+            }
             
-        }
-        
-        // Transcortical Sensory Aphasia
-        if self.aphasiaArray[0].isSymptom && !self.aphasiaArray[1].isSymptom && self.aphasiaArray[2].isSymptom {
-            self.aphasiaDiagnosisArray[3].isConsistent = true
+            // Wernicke's Aphasia
+            if aphasia[0].isSymptom && !aphasia[1].isSymptom && !aphasia[2].isSymptom {
+                self.aphasiaDiagnosisArray[2].isConsistent = true
+                
+            }
             
-        }
-        
-        // Transcortical Motor Aphasia
-        if !self.aphasiaArray[0].isSymptom && self.aphasiaArray[1].isSymptom && self.aphasiaArray[2].isSymptom {
-            self.aphasiaDiagnosisArray[4].isConsistent = true
+            // Transcortical Sensory Aphasia
+            if aphasia[0].isSymptom && !aphasia[1].isSymptom && aphasia[2].isSymptom {
+                self.aphasiaDiagnosisArray[3].isConsistent = true
+                
+            }
             
-        }
-        
-        // Transcortical Mixed Aphasia
-        if !self.aphasiaArray[0].isSymptom && !self.aphasiaArray[1].isSymptom && self.aphasiaArray[2].isSymptom {
-            self.aphasiaDiagnosisArray[5].isConsistent = true
+            // Transcortical Motor Aphasia
+            if !aphasia[0].isSymptom && aphasia[1].isSymptom && aphasia[2].isSymptom {
+                self.aphasiaDiagnosisArray[4].isConsistent = true
+                
+            }
             
-        }
-        
-        // Global Aphasia
-        if !self.aphasiaArray[0].isSymptom && !self.aphasiaArray[1].isSymptom && !self.aphasiaArray[2].isSymptom {
-            self.aphasiaDiagnosisArray[6].isConsistent = true
-        }
-        
-        // Apraxia of Speech
-        if !self.aphasiaArray[0].isSymptom && self.aphasiaArray[1].isSymptom && !self.aphasiaArray[2].isSymptom {
+            // Transcortical Mixed Aphasia
+            if !aphasia[0].isSymptom && !aphasia[1].isSymptom && aphasia[2].isSymptom {
+                self.aphasiaDiagnosisArray[5].isConsistent = true
+                
+            }
             
-            self.aphasiaDiagnosisArray[7].isConsistent = true
-        }
-        
-        // Anomic Aphasia
-        if self.aphasiaArray[0].isSymptom && self.aphasiaArray[1].isSymptom && self.aphasiaArray[2].isSymptom {
+            // Global Aphasia
+            if !aphasia[0].isSymptom && !aphasia[1].isSymptom && !aphasia[2].isSymptom {
+                self.aphasiaDiagnosisArray[6].isConsistent = true
+            }
             
-            self.aphasiaDiagnosisArray[8].isConsistent = true
+            // Apraxia of Speech
+            if !aphasia[0].isSymptom && aphasia[1].isSymptom && !aphasia[2].isSymptom {
+                
+                self.aphasiaDiagnosisArray[7].isConsistent = true
+            }
+            
+            // Anomic Aphasia
+            if aphasia[0].isSymptom && aphasia[1].isSymptom && aphasia[2].isSymptom {
+                
+                self.aphasiaDiagnosisArray[8].isConsistent = true
+            }
         }
     }
     

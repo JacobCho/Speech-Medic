@@ -16,9 +16,22 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
     private let username = "Colleen"
     private let password = "cooleen"
     
+    let defaults = NSUserDefaults.standardUserDefaults()
+    let defaultsKey = "logged"
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        
+    }
+    
+    override func viewDidAppear(animated: Bool) {
+        super.viewDidAppear(animated)
+            if defaults.boolForKey(defaultsKey) {
+                let SMNavController = UIStoryboard(name: "Main", bundle: NSBundle.mainBundle()).instantiateViewControllerWithIdentifier("SMNavController") as SMNavigationController
+                
+                self.presentViewController(SMNavController, animated: true, completion: nil)
+            }
         
     }
 
@@ -32,6 +45,8 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
             self.presentViewController(loginAlert, animated: true, completion: nil)
             
         } else if usernameTextField.text == username && passwordTextField.text == password {
+            defaults.setBool(true, forKey: defaultsKey)
+            
             // username and password match
             let SMNavController = UIStoryboard(name: "Main", bundle: NSBundle.mainBundle()).instantiateViewControllerWithIdentifier("SMNavController") as SMNavigationController
             

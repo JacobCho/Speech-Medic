@@ -109,7 +109,7 @@
         <!--Symptoms View Controller-->
         <scene sceneID="PrC-8s-tOI">
             <objects>
-                <viewController id="Owj-TE-SRg" customClass="SymptomsViewController" customModule="Speech_Medic" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController modalTransitionStyle="crossDissolve" id="Owj-TE-SRg" customClass="SymptomsViewController" customModule="Speech_Medic" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="JyH-LV-7ik"/>
                         <viewControllerLayoutGuide type="bottom" id="vZC-Aa-663"/>
