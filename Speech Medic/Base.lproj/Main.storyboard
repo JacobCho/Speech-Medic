@@ -18,7 +18,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="What do you need a diagnosis for?" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="16" translatesAutoresizingMaskIntoConstraints="NO" id="VT5-xM-ogE">
-                                <rect key="frame" x="144" y="190" width="313" height="21"/>
+                                <rect key="frame" x="144" y="200" width="313" height="21"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="21" id="Ynx-MP-p8S"/>
                                     <constraint firstAttribute="width" constant="313" id="lDb-nV-n6k"/>
@@ -27,88 +27,13 @@
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <view contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Nii-Td-fJA">
-                                <rect key="frame" x="150" y="250" width="300" height="100"/>
-                                <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aWR-XD-giC" customClass="SymptomsButton" customModule="Speech_Medic" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="0.0" width="100" height="100"/>
-                                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="100" id="FGB-sB-S5K"/>
-                                            <constraint firstAttribute="width" constant="100" id="Ko0-gV-etF"/>
-                                            <constraint firstAttribute="height" constant="100" id="X0V-Ru-ON2"/>
-                                            <constraint firstAttribute="width" constant="100" id="axF-VZ-WYh"/>
-                                        </constraints>
-                                        <state key="normal" title="Motor Speech">
-                                            <color key="titleColor" red="0.7725490196" green="0.88235294119999996" blue="0.64705882349999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                        </state>
-                                        <userDefinedRuntimeAttributes>
-                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                                <real key="value" value="50"/>
-                                            </userDefinedRuntimeAttribute>
-                                        </userDefinedRuntimeAttributes>
-                                        <variation key="default">
-                                            <mask key="constraints">
-                                                <exclude reference="Ko0-gV-etF"/>
-                                                <exclude reference="X0V-Ru-ON2"/>
-                                            </mask>
-                                        </variation>
-                                        <connections>
-                                            <action selector="motorSpeechButtonPressed:" destination="MBC-9P-Eue" eventType="touchUpInside" id="bKc-gy-DFT"/>
-                                        </connections>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Cra-f2-gvi" customClass="SymptomsButton" customModule="Speech_Medic" customModuleProvider="target">
-                                        <rect key="frame" x="200" y="0.0" width="100" height="100"/>
-                                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="100" id="Lxc-AV-q2f"/>
-                                            <constraint firstAttribute="width" constant="100" id="XDq-Ao-7ZW"/>
-                                            <constraint firstAttribute="width" constant="100" id="eYJ-d3-t2K"/>
-                                            <constraint firstAttribute="height" constant="100" id="lJl-h7-eiq"/>
-                                        </constraints>
-                                        <state key="normal" title="Aphasia">
-                                            <color key="titleColor" red="0.7725490196" green="0.88235294119999996" blue="0.64705882349999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                        </state>
-                                        <userDefinedRuntimeAttributes>
-                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                                <real key="value" value="50"/>
-                                            </userDefinedRuntimeAttribute>
-                                        </userDefinedRuntimeAttributes>
-                                        <variation key="default">
-                                            <mask key="constraints">
-                                                <exclude reference="Lxc-AV-q2f"/>
-                                                <exclude reference="eYJ-d3-t2K"/>
-                                            </mask>
-                                        </variation>
-                                        <connections>
-                                            <action selector="aphasiaButtonPressed:" destination="MBC-9P-Eue" eventType="touchUpInside" id="206-EU-yWu"/>
-                                        </connections>
-                                    </button>
-                                </subviews>
-                                <color key="backgroundColor" red="0.7725490196" green="0.88235294119999996" blue="0.64705882349999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <constraints>
-                                    <constraint firstItem="Cra-f2-gvi" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="aWR-XD-giC" secondAttribute="trailing" constant="25" id="8U3-2T-mAY"/>
-                                    <constraint firstItem="aWR-XD-giC" firstAttribute="leading" secondItem="Nii-Td-fJA" secondAttribute="leading" id="Aj7-SB-9gY"/>
-                                    <constraint firstAttribute="height" constant="100" id="E9q-YH-oAL"/>
-                                    <constraint firstAttribute="trailing" secondItem="Cra-f2-gvi" secondAttribute="trailing" id="F2G-d3-b1j"/>
-                                    <constraint firstAttribute="centerY" secondItem="Cra-f2-gvi" secondAttribute="centerY" id="TY8-Y7-ytv"/>
-                                    <constraint firstAttribute="centerY" secondItem="aWR-XD-giC" secondAttribute="centerY" id="b2P-o3-9dD"/>
-                                    <constraint firstAttribute="width" relation="lessThanOrEqual" constant="300" id="ndf-f0-C9l"/>
-                                </constraints>
-                            </view>
                         </subviews>
                         <color key="backgroundColor" red="0.7725490196" green="0.88235294119999996" blue="0.64705882349999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="Nii-Td-fJA" firstAttribute="top" secondItem="VT5-xM-ogE" secondAttribute="bottom" constant="39" id="C2Z-vG-KmM"/>
+                            <constraint firstAttribute="centerY" secondItem="VT5-xM-ogE" secondAttribute="centerY" constant="90" id="6F2-8v-9ZI"/>
                             <constraint firstAttribute="trailingMargin" relation="greaterThanOrEqual" secondItem="VT5-xM-ogE" secondAttribute="trailing" constant="8" id="EZg-Ff-wO3"/>
-                            <constraint firstAttribute="trailingMargin" relation="greaterThanOrEqual" secondItem="Nii-Td-fJA" secondAttribute="trailing" constant="8" id="Hqg-cM-3wo"/>
                             <constraint firstAttribute="centerX" secondItem="VT5-xM-ogE" secondAttribute="centerX" id="Lyj-Qb-i57"/>
-                            <constraint firstItem="Nii-Td-fJA" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="8Y1-SJ-gXE" secondAttribute="leadingMargin" constant="8" id="PLv-Pb-mjJ"/>
                             <constraint firstItem="VT5-xM-ogE" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="8Y1-SJ-gXE" secondAttribute="leadingMargin" constant="8" id="aHE-Ph-R8u"/>
-                            <constraint firstAttribute="centerY" secondItem="Nii-Td-fJA" secondAttribute="centerY" id="kMh-Ly-Nfx"/>
-                            <constraint firstAttribute="centerX" secondItem="Nii-Td-fJA" secondAttribute="centerX" id="v9S-Xg-GZb"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Speech Medic" id="cKt-4r-jIO">

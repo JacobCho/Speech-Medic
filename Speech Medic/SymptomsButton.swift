@@ -9,11 +9,20 @@
 import UIKit
 
 class SymptomsButton: UIButton {
-    
-    @IBInspectable var cornerRadius: CGFloat = 0 {
-        didSet {
-            layer.cornerRadius = cornerRadius
-            layer.masksToBounds = cornerRadius > 0
-        }
+
+    required init(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)
+        
     }
+    
+    override init(frame: CGRect) {
+        super.init(frame: frame)
+    }
+    
+    override func drawRect(rect: CGRect) {
+        backgroundColor = UIColor.whiteColor()
+        layer.cornerRadius = bounds.height/2
+        layer.masksToBounds = true
+    }
+    
 }
