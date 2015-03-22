@@ -20,11 +20,11 @@ protocol ChoiceViewControllerDelegate {
 class ChoiceViewController: UIViewController {
     
     var delegate : ChoiceViewControllerDelegate?
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
-    
+        
     }
 
     @IBAction func motorSpeechButtonPressed(sender: SymptomsButton) {

@@ -29,7 +29,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
         super.viewDidAppear(animated)
             if defaults.boolForKey(defaultsKey) {
                 let SMNavController = UIStoryboard(name: "Main", bundle: NSBundle.mainBundle()).instantiateViewControllerWithIdentifier("SMNavController") as SMNavigationController
-                
+
                 self.presentViewController(SMNavController, animated: true, completion: nil)
             }
         
