@@ -41,7 +41,8 @@ class ChoiceViewController: UIViewController {
     
     func createMotorSpeechButton() {
         
-        self.motorSpeechButton = SymptomsButton(frame: CGRect(x: window.width/2 - 65, y: window.height + 25, width: 25, height: 25))
+        self.motorSpeechButton = SymptomsButton(frame: CGRect(x: window.width/2 - 65, y: window.height + 25, width: 100, height: 100))
+        self.motorSpeechButton!.transform = CGAffineTransformMakeScale(0.25, 0.25)
         self.motorSpeechButton!.backgroundColor = UIColor.whiteColor()
         self.view.addSubview(self.motorSpeechButton!)
         
@@ -53,8 +54,11 @@ class ChoiceViewController: UIViewController {
         }) { finished in
             
             UIView.animateWithDuration(0.3, animations: { () -> Void in
-            self.motorSpeechButton!.transform = CGAffineTransformMakeScale(4.0, 4.0)
-                })
+            self.motorSpeechButton!.transform = CGAffineTransformMakeScale(1.0, 1.0)
+                }) { finished in
+                    
+                self.motorSpeechButton!.setTitle("Motor Speech", forState: .Normal)
+            }
             
             self.motorSpeechButton?.addTarget(self, action: "motorSpeechButtonPressed:", forControlEvents: UIControlEvents.TouchUpInside)
         }

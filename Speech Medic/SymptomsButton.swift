@@ -12,7 +12,6 @@ class SymptomsButton: UIButton {
 
     required init(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
-        
     }
     
     override init(frame: CGRect) {
@@ -23,6 +22,8 @@ class SymptomsButton: UIButton {
         backgroundColor = UIColor.whiteColor()
         layer.cornerRadius = bounds.height/2
         layer.masksToBounds = true
+        self.setTitleColor(UIColor(red: 197.0/255.0, green: 225.0/255.0, blue: 165.0/255.0, alpha: 1), forState: .Normal)
+        self.titleLabel!.font = UIFont.boldSystemFontOfSize(13)
     }
     
 }
