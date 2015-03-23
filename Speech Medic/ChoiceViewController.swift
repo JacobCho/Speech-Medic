@@ -21,12 +21,14 @@ class ChoiceViewController: UIViewController {
     
     var delegate : ChoiceViewControllerDelegate?
     var motorSpeechButton : SymptomsButton?
+    var aphasiaButton : SymptomsButton?
     let window = UIScreen.mainScreen().bounds
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         self.createMotorSpeechButton()
+        self.createAphasiaButton()
     }
 
     func motorSpeechButtonPressed(sender: SymptomsButton) {
@@ -41,13 +43,13 @@ class ChoiceViewController: UIViewController {
     
     func createMotorSpeechButton() {
         
-        self.motorSpeechButton = SymptomsButton(frame: CGRect(x: window.width/2 - 65, y: window.height + 25, width: 100, height: 100))
+        self.motorSpeechButton = SymptomsButton(frame: CGRect(x: window.width/2, y: window.height + 25, width: 100, height: 100))
         self.motorSpeechButton!.transform = CGAffineTransformMakeScale(0.25, 0.25)
         self.motorSpeechButton!.backgroundColor = UIColor.whiteColor()
         self.view.addSubview(self.motorSpeechButton!)
         
         UIView.animateWithDuration(1.0, delay: 0.5, options: nil, animations: { () -> Void in
-            let newFrame = CGRect(x: self.window.width/2 - 65, y: self.window.height/2 - 50, width: 25, height: 25)
+            let newFrame = CGRect(x: self.window.width/2 - 80, y: self.window.height/2 - 50, width: 25, height: 25)
             
             self.motorSpeechButton!.frame = newFrame
             
@@ -61,6 +63,32 @@ class ChoiceViewController: UIViewController {
             }
             
             self.motorSpeechButton?.addTarget(self, action: "motorSpeechButtonPressed:", forControlEvents: UIControlEvents.TouchUpInside)
+        }
+        
+    }
+    
+    func createAphasiaButton() {
+        
+        self.aphasiaButton = SymptomsButton(frame: CGRect(x: window.width/2, y: window.height + 25, width: 100, height: 100))
+        self.aphasiaButton!.transform = CGAffineTransformMakeScale(0.25, 0.25)
+        self.aphasiaButton!.backgroundColor = UIColor.whiteColor()
+        self.view.addSubview(self.aphasiaButton!)
+        
+        UIView.animateWithDuration(1.0, delay: 0.8, options: nil, animations: { () -> Void in
+            let newFrame = CGRect(x: self.window.width/2 + 40, y: self.window.height/2 - 50, width: 25, height: 25)
+            
+            self.aphasiaButton!.frame = newFrame
+            
+            }) { finished in
+                
+                UIView.animateWithDuration(0.3, animations: { () -> Void in
+                    self.aphasiaButton!.transform = CGAffineTransformMakeScale(1.0, 1.0)
+                    }) { finished in
+                        
+                        self.aphasiaButton!.setTitle("Aphasia", forState: .Normal)
+                }
+                
+                self.aphasiaButton?.addTarget(self, action: "aphasiaButtonPressed:", forControlEvents: UIControlEvents.TouchUpInside)
         }
         
     }
