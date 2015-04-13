@@ -11,8 +11,6 @@ import UIKit
 class DiagnosisTableViewCell: UITableViewCell {
 
     @IBOutlet weak var nameLabel: UILabel!
-    @IBOutlet weak var percentageLabel: UILabel!
     @IBOutlet weak var consistentImageView: UIImageView!
-    @IBOutlet weak var circleView: CircleView!
     @IBOutlet weak var lesionSiteLabel: UILabel!
 }

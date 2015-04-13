@@ -120,8 +120,6 @@ class DiagnosisViewController: UIViewController, UITableViewDataSource, UITableV
         cell.lesionSiteLabel.text = diagnosis.possibleLesionSite
         
         if indexPath.section == 0 && !aphasiaSetup {
-            cell.percentageLabel.hidden = false
-            cell.circleView.hidden = false
         
             if let certainty = diagnosis.certainty {
                 if certainty >= self.getMaxCertainty() {
@@ -129,11 +127,9 @@ class DiagnosisViewController: UIViewController, UITableViewDataSource, UITableV
                 } else {
                     cell.consistentImageView.image = UIImage(named: "unconsistentIcon")
                 }
-                cell.percentageLabel.text = String(Int(certainty*100)) + "%"
             } else {
                 cell.consistentImageView.image = UIImage(named: "unconsistentIcon")
-                cell.percentageLabel.hidden = true
-                cell.circleView.hidden = true
+
             }
         } else {
             
@@ -144,8 +140,7 @@ class DiagnosisViewController: UIViewController, UITableViewDataSource, UITableV
                 cell.consistentImageView.image = UIImage(named: "unconsistentIcon")
 
             }
-            cell.percentageLabel.hidden = true
-            cell.circleView.hidden = true
+
         }
         
         return cell

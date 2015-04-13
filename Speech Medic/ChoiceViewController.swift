@@ -23,6 +23,7 @@ class ChoiceViewController: UIViewController {
     var motorSpeechButton : SymptomsButton?
     var aphasiaButton : SymptomsButton?
     let window = UIScreen.mainScreen().bounds
+    @IBOutlet weak var creditLabel: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -84,8 +85,11 @@ class ChoiceViewController: UIViewController {
                 UIView.animateWithDuration(0.3, animations: { () -> Void in
                     self.aphasiaButton!.transform = CGAffineTransformMakeScale(1.0, 1.0)
                     }) { finished in
-                        
                         self.aphasiaButton!.setTitle("Aphasia", forState: .Normal)
+                        
+                        UIView.animateWithDuration(0.3, animations: { () -> Void in
+                            self.creditLabel.alpha = 1.0
+                        })
                 }
                 
                 self.aphasiaButton?.addTarget(self, action: "aphasiaButtonPressed:", forControlEvents: UIControlEvents.TouchUpInside)
