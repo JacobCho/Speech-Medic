@@ -112,9 +112,9 @@ class DiagnosisViewController: UIViewController, UITableViewDataSource, UITableV
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         
-        let cell = tableView.dequeueReusableCellWithIdentifier("DiagnosisCell") as DiagnosisTableViewCell
+        let cell = tableView.dequeueReusableCellWithIdentifier("DiagnosisCell") as! DiagnosisTableViewCell
         
-        let diagnosis = diagnosisArray[indexPath.section][indexPath.row] as Diagnosis
+        let diagnosis = diagnosisArray[indexPath.section][indexPath.row] as! Diagnosis
         
         cell.nameLabel.text = diagnosis.name
         cell.lesionSiteLabel.text = diagnosis.possibleLesionSite

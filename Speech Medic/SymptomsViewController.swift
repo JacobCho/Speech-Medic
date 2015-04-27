@@ -139,9 +139,9 @@ class SymptomsViewController: UIViewController, UITableViewDataSource, ChoiceVie
 
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
 
-        let cell = tableView.dequeueReusableCellWithIdentifier("SymptomCell") as SymptomTableViewCell
+        let cell = tableView.dequeueReusableCellWithIdentifier("SymptomCell") as! SymptomTableViewCell
 
-        let symptom = self.sectionsArray[indexPath.section][indexPath.row] as Symptom
+        let symptom = self.sectionsArray[indexPath.section][indexPath.row] as! Symptom
         cell.symptomLabel.text = symptom.name
         if symptom.isSymptom == true {
             cell.symptomSwitch.on = true
@@ -157,10 +157,10 @@ class SymptomsViewController: UIViewController, UITableViewDataSource, ChoiceVie
     // MARK: Helper Methods
     
     func switchTriggered(sender: UISwitch) {
-        let tableCell : UITableViewCell = sender.superview?.superview as UITableViewCell
+        let tableCell : UITableViewCell = sender.superview?.superview as! UITableViewCell
         let indexPath = self.tableView.indexPathForCell(tableCell)
         
-        let symptom = self.sectionsArray[indexPath!.section][indexPath!.row] as Symptom
+        let symptom = self.sectionsArray[indexPath!.section][indexPath!.row] as! Symptom
         
         if sender.on == true {
             symptom.isSymptom = true
@@ -172,7 +172,7 @@ class SymptomsViewController: UIViewController, UITableViewDataSource, ChoiceVie
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if segue.identifier == "DiagnosisSegue" {
-            var diagnosisVC = segue.destinationViewController as DiagnosisViewController
+            var diagnosisVC = segue.destinationViewController as! DiagnosisViewController
             if !aphasiaSetup {
                 diagnosisVC.oralExamArray = self.oralExamArray!
                 diagnosisVC.voiceQualityArray = self.voiceQualityArray!

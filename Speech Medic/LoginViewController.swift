@@ -13,8 +13,8 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var usernameTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
     
-    private let username = "Colleen"
-    private let password = "cooleen"
+    private let username = "SASS2015"
+    private let password = "novelty"
     
     let defaults = NSUserDefaults.standardUserDefaults()
     let defaultsKey = "logged"
@@ -28,7 +28,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
     override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(animated)
             if defaults.boolForKey(defaultsKey) {
-                let SMNavController = UIStoryboard(name: "Main", bundle: NSBundle.mainBundle()).instantiateViewControllerWithIdentifier("SMNavController") as SMNavigationController
+                let SMNavController = UIStoryboard(name: "Main", bundle: NSBundle.mainBundle()).instantiateViewControllerWithIdentifier("SMNavController") as! SMNavigationController
 
                 self.presentViewController(SMNavController, animated: true, completion: nil)
             }
@@ -48,7 +48,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
             defaults.setBool(true, forKey: defaultsKey)
             
             // username and password match
-            let SMNavController = UIStoryboard(name: "Main", bundle: NSBundle.mainBundle()).instantiateViewControllerWithIdentifier("SMNavController") as SMNavigationController
+            let SMNavController = UIStoryboard(name: "Main", bundle: NSBundle.mainBundle()).instantiateViewControllerWithIdentifier("SMNavController") as! SMNavigationController
             
             self.presentViewController(SMNavController, animated: true, completion: nil)
             
@@ -71,7 +71,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
     }
     
     // If user touches outside the keyboard, resign keyboard
-    override func touchesBegan(touches: NSSet, withEvent event: UIEvent) {
+    override func touchesBegan(touches: Set<NSObject>, withEvent event: UIEvent) {
         self.view.endEditing(true)
     }
 }
